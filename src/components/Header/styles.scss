@@ -1,15 +1,30 @@
 @use './../../styles/vars';
+@import './../../styles/theme';
 
 .header {
+  @include themify($themes) {
+    background: themed('backgroundColor');
+    color: themed('textColor');
+  }
   display: flex;
   justify-content: space-between;
-  background-color: vars.$background-light-mode;
+
   box-shadow: 1px 12px 15px 0px rgba(189,181,181,0.60);
   padding: 2rem 1.5rem;
   font-size: vars.$homepage-items;
 
   &__title {
     font-weight: 800;
+  }
+  &__theme {
+    @include themify($themes) {
+      background: themed('backgroundColor');
+      color: themed('textColor');
+    }
+    border: none;
+    background-color: transparent;
+    outline: none;
+
   }
 
 }
