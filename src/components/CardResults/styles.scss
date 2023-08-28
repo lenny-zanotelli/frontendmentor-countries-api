@@ -4,7 +4,7 @@
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
   align-items: center;
   max-width: 23.4375rem;
@@ -31,12 +31,14 @@
 }
 
 .card {
+  @include themify($themes) {
+    background: themed('backgroundColor');
+    color: themed('textColor');
+  }
   width: 18rem;
   height: 24rem;
-  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -49,12 +51,23 @@
 }
 
 .card-title {
+  @include themify($themes) {
+    background: themed('backgroundColor');
+    color: themed('textColor');
+  }
   font-size: 1.2rem;
   font-weight: bold;
+  padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 .card-element {
+  @include themify($themes) {
+    background: themed('backgroundColor');
+    color: themed('textColor');
+  }
+  padding: 0.5rem;
   font-size: 1rem;
   color: #555555;
+
 }

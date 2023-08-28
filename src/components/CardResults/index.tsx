@@ -1,10 +1,9 @@
-import { Icountry } from '../../@types/countries';
+import { ICountry } from '../../@types/countries';
 import Card from './Card';
 import './styles.scss';
 
 interface CountriesResultsProps {
-  countries: Icountry[]
-
+  countries: ICountry[]
 }
 
 function CardResults({ countries }: CountriesResultsProps) {

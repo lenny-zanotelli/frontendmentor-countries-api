@@ -2,7 +2,12 @@
 @import './../../styles/theme';
 
 .page {
+  @include themify($themes) {
+    background: themed('backgroundColor');
+    color: themed('textColor');
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
