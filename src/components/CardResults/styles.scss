@@ -1,0 +1,60 @@
+@use './../../styles/vars';
+@import './../../styles/theme';
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 23.4375rem;
+  margin: 0 auto;
+
+}
+
+@media (min-width: 48rem) { /* 768px en rem */
+  .card-container {
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 60rem) { /* Entre 768px et 960px en rem */
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  }
+}
+
+@media (min-width: 64rem) { /* 1024px en rem */
+  .card-container {
+    grid-template-columns: repeat(4, minmax(18rem, 1fr));
+  }
+}
+
+.card {
+  width: 18rem;
+  height: 24rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-element {
+  font-size: 1rem;
+  color: #555555;
+}

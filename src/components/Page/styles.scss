@@ -1,0 +1,8 @@
+@use './../../styles/vars';
+@import './../../styles/theme';
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
