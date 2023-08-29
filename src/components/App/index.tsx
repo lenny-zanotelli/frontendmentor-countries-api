@@ -7,7 +7,7 @@ import SearchBar from '../SearchBar';
 import Layout from '../Layout';
 import CardResults from '../CardResults';
 import FilterBar from '../FilterBar';
-import { fecthCountries } from '../../utils/countries';
+import { fecthCountries } from '../../utils/getCountries';
 import { Country } from '../../@types/countries';
 
 function App() {

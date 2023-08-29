@@ -3,7 +3,7 @@
 
 .select-content {
   @include themify($themes) {
-    background: themed('backgroundColor');
+    background: themed('elementsColor');
     color: themed('textColor');
   }
   border-radius: 8px;

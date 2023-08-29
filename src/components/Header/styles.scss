@@ -3,7 +3,7 @@
 
 .header {
   @include themify($themes) {
-    background: themed('backgroundColor');
+    background: themed('elementsColor');
     color: themed('textColor');
   }
   display: flex;
@@ -17,7 +17,7 @@
   }
   &__theme {
     @include themify($themes) {
-      background: themed('backgroundColor');
+      background: themed('elementsColor');
       color: themed('textColor');
     }
     border: none;
