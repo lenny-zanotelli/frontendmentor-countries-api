@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // On importe ReactDom qui nous permettra d'injecter notre application dans le DOM
 import ReactDOM from 'react-dom/client';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 // On importe notre composant principal
 import App from './components/App';
@@ -18,5 +19,6 @@ const queryClient = new QueryClient({
 root.render(
   <QueryClientProvider client={queryClient}>
     <App />
+    <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>,
 );

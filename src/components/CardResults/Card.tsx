@@ -13,7 +13,9 @@ function Card({ country }: CountryProps) {
       <p className="card-element">
         Population :
         {' '}
-        {country.population}
+        {country.population.toLocaleString('en', {
+          useGrouping: true,
+        })}
       </p>
       <p className="card-element">
         Region :

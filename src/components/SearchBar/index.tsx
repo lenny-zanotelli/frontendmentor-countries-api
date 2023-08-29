@@ -4,7 +4,6 @@ import './styles.scss';
 import {
   ChangeEvent, useState,
 } from 'react';
-import { fetchCountriesByName } from '../../utils/countries';
 
 interface SearchBarProps {
   onSubmitSearch: (searchText: string) => void;
@@ -15,8 +14,8 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const searchText = event.target.value;
-    fetchCountriesByName(searchText);
     setQuery(searchText);
+    onSubmitSearch(searchText);
   };
 
   return (
@@ -26,7 +25,8 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
         className="search-input"
         value={query}
         onChange={handleChange}
-        type="search"
+        name="searchbar"
+        type="text"
         placeholder="Search for a country..."
       />
     </section>
