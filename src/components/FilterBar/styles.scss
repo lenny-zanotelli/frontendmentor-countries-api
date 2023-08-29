@@ -1,0 +1,13 @@
+@use './../../styles/vars';
+@import './../../styles/theme';
+
+.select-content {
+  @include themify($themes) {
+    background: themed('backgroundColor');
+    color: themed('textColor');
+  }
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}

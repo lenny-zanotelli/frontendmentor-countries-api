@@ -6,14 +6,14 @@ import { Country } from '../../@types/countries';
 interface CardResultsProps {
   countries: Country[];
   searchText: string;
+  selectedRegion: string;
 }
 
-function CardResults({ countries, searchText }: CardResultsProps) {
-  console.log('Render');
-
+function CardResults({ countries, searchText, selectedRegion }: CardResultsProps) {
   const filteredCountries = countries
     .filter((country) => country.name.common
-      .toLowerCase().includes(searchText.toLowerCase()));
+      .toLowerCase().includes(searchText.toLowerCase())
+      && (selectedRegion === 'all' || country.region === selectedRegion));
 
   return (
     <section className="card-container">

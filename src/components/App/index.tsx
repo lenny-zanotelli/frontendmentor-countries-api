@@ -4,15 +4,16 @@ import { ThemeContext } from '../../contexts/theme-context';
 import './styles.scss';
 import Header from '../Header';
 import SearchBar from '../SearchBar';
-import Page from '../Page';
+import Layout from '../Layout';
 import CardResults from '../CardResults';
-import SelectOptions from '../SelectOptions';
+import FilterBar from '../FilterBar';
 import { fecthCountries } from '../../utils/countries';
 import { Country } from '../../@types/countries';
 
 function App() {
   const isBrowserDefaultDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [textToSearch, setTextToSearch] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('all');
   const [theme, setTheme] = useState(isBrowserDefaultDark() ? 'dark' : 'light');
   const themeMemo = useMemo(() => ({ theme, setTheme }), [theme]);
   const {
@@ -37,15 +38,25 @@ function App() {
     setTextToSearch(searchText);
   };
 
+  const handleSelectRegion = (region: string) => {
+    setSelectedRegion(region);
+  };
+
   return (
     <ThemeContext.Provider value={themeMemo}>
       <div className={`theme-${theme}`}>
         <Header />
-        <Page>
+        <Layout>
           <SearchBar onSubmitSearch={handleSubmitSearch} />
-          <SelectOptions />
-          <CardResults countries={allCountries} searchText={textToSearch} />
-        </Page>
+          <FilterBar
+            onSelectRegion={handleSelectRegion}
+          />
+          <CardResults
+            countries={allCountries}
+            searchText={textToSearch}
+            selectedRegion={selectedRegion}
+          />
+        </Layout>
       </div>
     </ThemeContext.Provider>
   );

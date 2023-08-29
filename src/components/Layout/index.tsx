@@ -1,10 +1,10 @@
 import './styles.scss';
 
-interface PageProps {
+interface Layoutrops {
   children: React.ReactNode;
 }
 
-function Page({ children }: PageProps) {
+function Layout({ children }: Layoutrops) {
   return (
     <main className="page">
       {children}
@@ -12,4 +12,4 @@ function Page({ children }: PageProps) {
   );
 }
 
-export default Page;
+export default Layout;
