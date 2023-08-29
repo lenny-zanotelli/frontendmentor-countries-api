@@ -1,20 +1,37 @@
-import { ICountry } from '../../@types/countries';
+/* eslint-disable import/no-extraneous-dependencies */
+import { useQuery } from '@tanstack/react-query';
 import Card from './Card';
 import './styles.scss';
+import { fecthCountries } from '../../utils/countries';
 
-interface CountriesResultsProps {
-  countries: ICountry[]
-}
+function CardResults() {
+  console.log('Render');
 
-function CardResults({ countries }: CountriesResultsProps) {
+  const {
+    isError, isSuccess, isLoading, data, error,
+  } = useQuery(
+    ['countries'],
+    fecthCountries,
+    { staleTime: 3000 },
+  );
+  if (isLoading) {
+    console.log('Loading...');
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    console.log('Error :', error);
+    return <div>Error...</div>;
+  }
   return (
     <section className="card-container">
-      {countries.map((country) => (
-        <Card
-          key={country.name}
-          country={country}
-        />
-      ))}
+      {data
+        && data.map((country) => (
+          <Card
+            key={country.name.official}
+            country={country}
+          />
+        ))}
     </section>
 
   );

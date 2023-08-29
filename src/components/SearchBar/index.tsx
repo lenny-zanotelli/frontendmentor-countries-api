@@ -1,10 +1,10 @@
-/* eslint-disable max-len */
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable import/no-extraneous-dependencies */
 import { HiOutlineSearch } from 'react-icons/hi';
 import './styles.scss';
 import {
-  ChangeEvent, FormEvent, useMemo, useState,
+  ChangeEvent, useState,
 } from 'react';
+import { fetchCountriesByName } from '../../utils/countries';
 
 interface SearchBarProps {
   onSubmitSearch: (searchText: string) => void;
@@ -15,8 +15,8 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const searchText = event.target.value;
+    fetchCountriesByName(searchText);
     setQuery(searchText);
-    onSubmitSearch(searchText);
   };
 
   return (
