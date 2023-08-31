@@ -1,13 +1,16 @@
 @use 'reset';
 @use 'fonts';
 @use 'vars';
-@import 'theme';
 
-html, body {
-  @include themify($themes) {
-    background: themed('elementsColor');
-    color: themed('textColor');
-  }
-  font-family: vars.$font-sans;
+html {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: vars.$font-sans;
+  height: 100vh;
+}
+
+.theme-dark {
+  background-color: vars.$dark-backgroundColor;
 }

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { ThemeContext } from '../../contexts/theme-context';
 import './styles.scss';
@@ -23,6 +23,11 @@ function App() {
   };
 
   const [theme, setTheme] = useState(getDefautlTheme);
+
+  useEffect(() => {
+    document.body.className = `theme-${theme}`;
+  }, [theme]);
+
   const themeMemo = useMemo(() => ({ theme, setTheme }), [theme]);
   const {
     isError, isLoading, data: allCountries, error,
@@ -52,18 +57,16 @@ function App() {
 
   return (
     <ThemeContext.Provider value={themeMemo}>
-      <div className={`theme-${theme}`}>
-        <Header />
-        <Layout>
-          <SearchBar onSubmitSearch={handleSubmitSearch} />
-          <FilterBar countries={allCountries} onSelectRegion={handleSelectRegion} />
-          <CardResults
-            countries={allCountries}
-            searchText={textToSearch}
-            selectedRegion={selectedRegion}
-          />
-        </Layout>
-      </div>
+      <Header />
+      <Layout>
+        <SearchBar onSubmitSearch={handleSubmitSearch} />
+        <FilterBar countries={allCountries} onSelectRegion={handleSelectRegion} />
+        <CardResults
+          countries={allCountries}
+          searchText={textToSearch}
+          selectedRegion={selectedRegion}
+        />
+      </Layout>
     </ThemeContext.Provider>
   );
 }
