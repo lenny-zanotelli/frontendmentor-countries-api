@@ -48,9 +48,7 @@ function App() {
         <Header />
         <Layout>
           <SearchBar onSubmitSearch={handleSubmitSearch} />
-          <FilterBar
-            onSelectRegion={handleSelectRegion}
-          />
+          <FilterBar countries={allCountries} onSelectRegion={handleSelectRegion} />
           <CardResults
             countries={allCountries}
             searchText={textToSearch}

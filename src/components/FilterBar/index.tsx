@@ -1,32 +1,42 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import Select from 'react-select';
 import './styles.scss';
 import { useState } from 'react';
+import { Country } from '../../@types/countries';
 
-const options = [
-  { value: 'all', label: 'Filter by Region' },
-  { value: 'Africa', label: 'Africa' },
-  { value: 'Americas', label: 'Americas' },
-  { value: 'Asia', label: 'Asia' },
-  { value: 'Europe', label: 'Europe' },
-  { value: 'Oceania', label: 'Oceania' },
-];
+interface FilterBarProps {
+  countries: Country[];
+  onSelectRegion: (region: string) => void;
+}
 
-function FilterBar({ onSelectRegion }: { onSelectRegion: (region: string) => void }) {
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+function FilterBar({ countries, onSelectRegion } : FilterBarProps) {
+  const [selectedOption, setSelectedOption] = useState('');
 
-  const handleChange = (selected: any) => {
-    setSelectedOption(selected);
-    onSelectRegion(selected.value);
+  // Make a set of unique regions...
+  const regionSet = new Set(countries.map((country) => country.region));
+  // ...and a sorted Array from the set
+  const regionsArray = Array.from(regionSet).sort();
+
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedRegion = event.target.value;
+    setSelectedOption(selectedRegion);
+    onSelectRegion(selectedRegion);
   };
   return (
     <section className="select-options">
-      <Select
+      <select
         className="select-content"
-        options={options}
         value={selectedOption}
         onChange={handleChange}
-      />
+      >
+        {regionsArray
+          .map((region) => (
+            <option
+              key={region}
+              value={region}
+            >
+              {region}
+            </option>
+          ))}
+      </select>
     </section>
   );
 }
