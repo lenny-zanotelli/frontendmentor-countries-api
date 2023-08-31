@@ -11,6 +11,7 @@ function Header() {
   const handleThemeChange = () => {
     const isCurrentDark = theme === 'dark';
     setTheme(isCurrentDark ? 'light' : 'dark');
+    localStorage.setItem('default-theme', isCurrentDark ? 'light' : 'dark');
   };
 
   return (

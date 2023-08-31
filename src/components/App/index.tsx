@@ -11,10 +11,18 @@ import { fecthCountries } from '../../utils/getCountries';
 import { Country } from '../../@types/countries';
 
 function App() {
-  const isBrowserDefaultDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [textToSearch, setTextToSearch] = useState('');
-  const [selectedRegion, setSelectedRegion] = useState('all');
-  const [theme, setTheme] = useState(isBrowserDefaultDark() ? 'dark' : 'light');
+  const [selectedRegion, setSelectedRegion] = useState('');
+
+  // Detecting the default theme
+  const isBrowserDefaultDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const getDefautlTheme = (): string => {
+    const localStorageTheme = localStorage.getItem('default-theme');
+    const browserDefault = isBrowserDefaultDark() ? 'dark' : 'light';
+    return localStorageTheme || browserDefault;
+  };
+
+  const [theme, setTheme] = useState(getDefautlTheme);
   const themeMemo = useMemo(() => ({ theme, setTheme }), [theme]);
   const {
     isError, isLoading, data: allCountries, error,
