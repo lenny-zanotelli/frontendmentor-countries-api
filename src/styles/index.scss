@@ -1,8 +1,13 @@
 @use 'reset';
 @use 'fonts';
 @use 'vars';
+@import 'theme';
 
-
-body {
+html, body {
+  @include themify($themes) {
+    background: themed('elementsColor');
+    color: themed('textColor');
+  }
   font-family: vars.$font-sans;
+  scroll-behavior: smooth;
 }

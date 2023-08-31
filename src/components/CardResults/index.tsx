@@ -13,7 +13,11 @@ function CardResults({ countries, searchText, selectedRegion }: CardResultsProps
   const filteredCountries = countries
     .filter((country) => country.name.common
       .toLowerCase().includes(searchText.toLowerCase())
-      && (selectedRegion === 'all' || country.region === selectedRegion));
+      && (selectedRegion === '' || country.region === selectedRegion));
+
+  if (filteredCountries.length === 0) {
+    return <p>No countries found.</p>;
+  }
 
   return (
     <section className="card-container">

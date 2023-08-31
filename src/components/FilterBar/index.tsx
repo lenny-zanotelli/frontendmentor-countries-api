@@ -27,6 +27,11 @@ function FilterBar({ countries, onSelectRegion } : FilterBarProps) {
         value={selectedOption}
         onChange={handleChange}
       >
+        <option
+          value=""
+        >
+          Filter by Region
+        </option>
         {regionsArray
           .map((region) => (
             <option
