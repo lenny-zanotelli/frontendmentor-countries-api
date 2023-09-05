@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import { Country } from '../../@types/countries';
 import './styles.scss';
 
@@ -22,9 +23,17 @@ function Card({ country }: CountryProps) {
         {country.region}
       </p>
       <p className="card-element">
+        {/* TODO: Can i do a better code than nested ternary for join multiple capitals here ? */}
         Capital :
         {' '}
-        {country.capital}
+        {country.capital ? (country.capital.length >= 2 ? (
+          country.capital.join(', ')
+        ) : (
+          country.capital[0]
+        )
+        ) : (
+          'N/A'
+        )}
       </p>
 
     </div>
