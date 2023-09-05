@@ -27,8 +27,8 @@ function App() {
   useEffect(() => {
     document.body.className = `theme-${theme}`;
   }, [theme]);
-
   const themeMemo = useMemo(() => ({ theme, setTheme }), [theme]);
+
   const {
     isError, isLoading, data: allCountries, error,
   } = useQuery<Country[]>(
