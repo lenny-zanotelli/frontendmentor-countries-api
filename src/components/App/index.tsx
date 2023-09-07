@@ -33,7 +33,7 @@ function App() {
           element={<Home />}
         />
         <Route
-          path="/:countryName"
+          path="/country/:countryName"
           element={<Detail />}
         />
       </Routes>

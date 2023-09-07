@@ -1,20 +1,31 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
 import { useQuery } from '@tanstack/react-query';
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import lookup from 'country-code-lookup';
 import { Country } from '../../@types/countries';
-import { findCountry } from '../../utils/findCountries';
+import { getOneCountry } from '../../services/getOneCounty';
 import './styles.scss';
+import Layout from '../../components/Layout';
+import BackButton from '../../components/BackButton';
+import formatNumber from '../../utils/formatPopNumber';
 
 function Detail() {
   const { countryName } = useParams();
+
   const {
     isError, isLoading, data: country, error,
   } = useQuery<Country>(
-    ['country'],
-    () => findCountry(countryName as string),
+    ['country', countryName],
+    () => getOneCountry(countryName as string),
     { staleTime: 3000 },
   );
+
+  useEffect(() => {
+    getOneCountry(countryName as string);
+  });
 
   if (isLoading) {
     console.log('Loading...');
@@ -29,33 +40,41 @@ function Detail() {
   if (!country) {
     return <div>Country not found</div>;
   }
+
   return (
-    <>
-      <button type="button">
-        <Link to="/">Back</Link>
-      </button>
-      <div>
+    <Layout>
+      <BackButton />
+      <section>
         <img src={country.flags.png} alt={country.name.common} />
         <h1>{country.name.common}</h1>
         <p>
           Population:
-          {' '}
-          {country.population.toLocaleString('en', { useGrouping: true })}
+          {country?.population ? formatNumber(country?.population) : ''}
         </p>
         <p>
           Region:
-          {' '}
           {country.region}
         </p>
         <div>
           <h3>Border Countries :</h3>
-          {/* TODO: How to put the common name for borders country ? */}
-          {country.borders.join(', ')}
+          {country?.borders?.map((border, index) => (
+            <button
+              type="button"
+              key={index}
+            >
+              <Link
+                to={`/country/${lookup.byIso(border)?.country}`}
+                key={index}
+              >
+                {lookup.byIso(border)?.country}
+              </Link>
+            </button>
+          ))}
         </div>
 
-      </div>
+      </section>
 
-    </>
+    </Layout>
 
   );
 }

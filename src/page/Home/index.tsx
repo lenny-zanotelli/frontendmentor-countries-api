@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import './styles.scss';
 import { Country } from '../../@types/countries';
-import { fecthCountries } from '../../utils/getCountries';
+import { getAllCountries } from '../../services/getAllCountries';
 import Layout from '../../components/Layout';
 import SearchBar from '../../components/SearchBar';
 import FilterBar from '../../components/FilterBar';
@@ -17,7 +17,7 @@ function Home() {
     isError, isLoading, data: allCountries, error,
   } = useQuery<Country[]>(
     ['countries'],
-    fecthCountries,
+    getAllCountries,
     { staleTime: 3000 },
   );
 

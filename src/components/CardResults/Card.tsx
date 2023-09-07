@@ -3,15 +3,17 @@
 import { Link } from 'react-router-dom';
 import { Country } from '../../@types/countries';
 import './styles.scss';
+import formatNumber from '../../utils/formatPopNumber';
 
 interface CountryProps {
   country: Country,
 }
 
 function Card({ country }: CountryProps) {
+  const populationFormat = formatNumber(country.population);
   return (
     <Link
-      to={`/${country.name.common}`}
+      to={`/country/${country.name.common}`}
     >
       <div className="card">
         <img src={country.flags.png} alt={country.name.common} />
@@ -19,9 +21,7 @@ function Card({ country }: CountryProps) {
         <p className="card-element">
           Population :
           {' '}
-          {country.population.toLocaleString('en', {
-            useGrouping: true,
-          })}
+          {populationFormat}
         </p>
         <p className="card-element">
           Region :
