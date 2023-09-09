@@ -2,11 +2,11 @@
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
 import { useQuery } from '@tanstack/react-query';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import lookup from 'country-code-lookup';
 import { Country } from '../../@types/countries';
-import { getOneCountry } from '../../services/getOneCounty';
+import { getOneCountry } from '../../services/getOneCountry';
 import './styles.scss';
 import Layout from '../../components/Layout';
 import BackButton from '../../components/BackButton';

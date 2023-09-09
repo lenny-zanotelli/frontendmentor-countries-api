@@ -104,6 +104,7 @@ export interface Maps {
 }
 
 export interface Name {
+  [x: string]: any;
   common: string;
   official: string;
   nativeName: { [key: string]: Translation };
