@@ -5,10 +5,11 @@
   @include themify($themes) {
     background: themed('elementsColor');
     color: themed('textColor');
+    box-shadow: 1px 12px 15px 0px themed('boxShadowColor');
   }
   display: flex;
   justify-content: space-between;
-  box-shadow: 1px 12px 15px 0px rgba(189,181,181,0.7);
+  // box-shadow: 1px 12px 15px 0px rgba(189,181,181,0.7);
   padding: 2rem 1.5rem;
   font-size: vars.$homepage-items;
 

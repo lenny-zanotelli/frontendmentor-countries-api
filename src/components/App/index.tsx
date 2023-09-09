@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { useEffect, useMemo, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from '../../page/Home';
+import Home from '../../pages/Home';
 import { ThemeContext } from '../../contexts/theme-context';
 import './styles.scss';
-import Detail from '../../page/Detail';
+import Detail from '../../pages/Detail';
 import Header from '../Header';
 
 function App() {
@@ -24,7 +24,6 @@ function App() {
   const themeMemo = useMemo(() => ({ theme, setTheme }), [theme]);
 
   return (
-
     <ThemeContext.Provider value={themeMemo}>
       <Header />
       <Routes>

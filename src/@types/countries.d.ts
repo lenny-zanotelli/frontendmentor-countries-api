@@ -21,7 +21,7 @@ export interface Country {
   borders: string[];
   area: number;
   demonyms: Demonyms;
-  flag: string;
+  flag?: string;
   maps: Maps;
   population: number;
   gini: Gini;
