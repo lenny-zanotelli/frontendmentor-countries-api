@@ -42,8 +42,10 @@ function Home() {
   return (
     <div>
       <Layout>
-        <SearchBar onSubmitSearch={handleSubmitSearch} />
-        <FilterBar countries={allCountries} onSelectRegion={handleSelectRegion} />
+        <div className="container-searchFilter">
+          <SearchBar onSubmitSearch={handleSubmitSearch} />
+          <FilterBar countries={allCountries} onSelectRegion={handleSelectRegion} />
+        </div>
         <CardResults
           countries={allCountries}
           searchText={textToSearch}

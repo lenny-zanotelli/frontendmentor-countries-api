@@ -1,0 +1,16 @@
+@use './../../styles/vars';
+@import './../../styles/theme';
+
+.container-searchFilter {
+  min-width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 48rem) { /* 768px en rem */
+  .container-searchFilter{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

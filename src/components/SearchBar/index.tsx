@@ -19,7 +19,7 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
   };
 
   return (
-    <section className="search-bar">
+    <div className="search-bar">
       <span className="search-svg"><HiOutlineSearch /></span>
       <input
         className="search-input"
@@ -29,7 +29,7 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
         type="text"
         placeholder="Search for a country..."
       />
-    </section>
+    </div>
 
   );
 }

@@ -21,7 +21,7 @@ function FilterBar({ countries, onSelectRegion } : FilterBarProps) {
     onSelectRegion(selectedRegion);
   };
   return (
-    <section className="select-options">
+    <div className="select-options">
       <select
         className="select-content"
         value={selectedOption}
@@ -42,7 +42,7 @@ function FilterBar({ countries, onSelectRegion } : FilterBarProps) {
             </option>
           ))}
       </select>
-    </section>
+    </div>
   );
 }
 

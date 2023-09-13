@@ -4,11 +4,10 @@
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-  gap: 1.5rem;
+  gap: 3rem;
   justify-content: center;
   align-items: center;
   max-width: 23.4375rem;
-  margin: 0 auto;
 }
 
 @media (min-width: 48rem) { /* 768px en rem */
