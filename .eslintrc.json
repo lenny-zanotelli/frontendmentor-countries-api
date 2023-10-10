@@ -9,7 +9,8 @@
     "airbnb/hooks",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "@commitlint/config-conventional"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
