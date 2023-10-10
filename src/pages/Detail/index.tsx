@@ -55,6 +55,32 @@ function Detail() {
           Region:
           {country.region}
         </p>
+        <p>
+          Sub Region:
+          {country.subregion}
+        </p>
+        <p>
+          Capital :
+          {country.capital}
+        </p>
+        <p>
+          Top Level Domain :
+          {country.tld}
+        </p>
+        <p>
+          Currencies: 
+          {Object.keys(country.currencies)
+          .map((currencyCode, index, array) => (
+            <span key={currencyCode}>
+              {country.currencies[currencyCode].name}
+              {index !== array.length - 1 ? ', ' : ''}
+            </span>
+          ))}
+        </p>
+        <p>
+          Languages : {Object.values(country.languages).join(', ')}
+
+        </p>
         <div>
           <h3>Border Countries :</h3>
           {country?.borders?.map((border, index) => (
