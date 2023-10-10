@@ -8,19 +8,28 @@ export interface Country {
   independent: boolean;
   status: string;
   unMember: boolean;
-  currencies: Currencies;
+  currencies: {
+    [currencyCode: string] : {
+      name: string;
+      symbol: string;
+    };
+  };
   idd: Idd;
   capital: string[];
   altSpellings: string[];
   region: string;
   subregion: string;
-  languages: Languages;
+  languages: {
+    [languageCode: string] : {
+      name: string;
+    }
+  };
   translations: { [key: string]: Translation };
   latlng: number[];
   landlocked: boolean;
   borders: string[];
   area: number;
-  demonyms: Demonyms;
+  demonyms: string;
   flag?: string;
   maps: Maps;
   population: number;
@@ -50,19 +59,6 @@ export interface CoatOfArms {
   svg: string;
 }
 
-export interface Currencies {
-  ZAR: Zar;
-}
-
-export interface Zar {
-  name: string;
-  symbol: string;
-}
-
-export interface Demonyms {
-  eng: Eng;
-  fra: Eng;
-}
 
 export interface Eng {
   f: string;
@@ -82,20 +78,6 @@ export interface Gini {
 export interface Idd {
   root: string;
   suffixes: string[];
-}
-
-export interface Languages {
-  afr: string;
-  eng: string;
-  nbl: string;
-  nso: string;
-  sot: string;
-  ssw: string;
-  tsn: string;
-  tso: string;
-  ven: string;
-  xho: string;
-  zul: string;
 }
 
 export interface Maps {
