@@ -18,7 +18,7 @@
   },
   "include": [
     "vite.config.ts",
-    "commitlint.config.js",
+    "commitlint.config.cjs",
     ".eslintrc.cjs",
     "src"
   ],

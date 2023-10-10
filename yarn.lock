@@ -371,7 +371,7 @@
   dependencies:
     find-up "^5.0.0"
 
-"@commitlint/types@^17.4.4":
+"@commitlint/types@^17", "@commitlint/types@^17.4.4":
   version "17.4.4"
   resolved "https://registry.npmjs.org/@commitlint/types/-/types-17.4.4.tgz"
   integrity sha512-amRN8tRLYOsxRr6mTnGGGvB5EmW/4DDjLMgiwK3CCVEmN6Sr/6xePGEpWaspKkckILuUORCwe6VfDBw6uj4axQ==
@@ -421,6 +421,26 @@
   version "8.37.0"
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.37.0.tgz"
   integrity sha512-x5vzdtOOGgFVDCUs81QRB2+liax8rFg3+7hqM+QhBG0/G3F1ZsoYl97UrqgHgQ9KKT7G6c4V+aTUCgu/n22v1A==
+
+"@gitmoji/commit-types@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.npmjs.org/@gitmoji/commit-types/-/commit-types-1.1.5.tgz"
+  integrity sha512-8D3FZMRY+gtYpTcHG1SOGmm9CFqxNh6rI9xDoCydxHxnWgqInbdF3nk9gibW5gXA58Hf2cVcJaLEcGOKLRAtmw==
+
+"@gitmoji/gitmoji-regex@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@gitmoji/gitmoji-regex/-/gitmoji-regex-1.0.0.tgz"
+  integrity sha512-+BFXxcWCxn0UIYuG1v5n9SfaCCS8tw95j1x3QsTJRdGGiihRyVLTHiu1wrHlzH3z4nYXKjCKiZFTdWwMjRI+gQ==
+  dependencies:
+    emoji-regex "^10"
+    gitmojis "^3"
+
+"@gitmoji/parser-opts@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@gitmoji/parser-opts/-/parser-opts-1.4.0.tgz"
+  integrity sha512-zzmx/vtpdB/ijjUm7u9OzHNCXWKpSbzVEgVzOzhilMgoTBlUDyInZFUtiCTV+Wf4oCP9nxGa/kQGQFfN+XLH1g==
+  dependencies:
+    "@gitmoji/gitmoji-regex" "1.0.0"
 
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
@@ -1054,6 +1074,33 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
+commitlint-config-gitmoji@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.npmjs.org/commitlint-config-gitmoji/-/commitlint-config-gitmoji-2.3.1.tgz"
+  integrity sha512-T15ssbsyNc6szHlnGWo0/xvIA1mObqM70E9TwKNVTpksxhm+OdFht8hvDdKJAVi4nlZX5tcfTeILOi7SHBGH3w==
+  dependencies:
+    "@commitlint/types" "^17"
+    "@gitmoji/commit-types" "1.1.5"
+    "@gitmoji/parser-opts" "1.4.0"
+    commitlint-plugin-gitmoji "2.2.6"
+
+commitlint-plugin-gitmoji@2.2.6:
+  version "2.2.6"
+  resolved "https://registry.npmjs.org/commitlint-plugin-gitmoji/-/commitlint-plugin-gitmoji-2.2.6.tgz"
+  integrity sha512-oKHPHeNXby0Ix0ZbHVSK5ZyPx1V4fyBjLOy93cYwXhOEPXe36nkDc/HDPFfQpzx1vz39277TaP9LScbqTbscfQ==
+  dependencies:
+    "@commitlint/types" "^17"
+    "@gitmoji/gitmoji-regex" "1.0.0"
+    gitmojis "^3"
+
+commitlint@^17.7.2:
+  version "17.7.2"
+  resolved "https://registry.npmjs.org/commitlint/-/commitlint-17.7.2.tgz"
+  integrity sha512-2WK/svhKxuPlBgXtZ3uJj5FYZDjfbPiD7P7BkHNgKs3ZPbj3wTXxP3TivPJPB8KY2M7/6AYwNNpc6KOOT83qww==
+  dependencies:
+    "@commitlint/cli" "^17.7.2"
+    "@commitlint/types" "^17.4.4"
+
 compare-func@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/compare-func/-/compare-func-2.0.0.tgz"
@@ -1262,6 +1309,11 @@ electron-to-chromium@^1.4.284:
   version "1.4.342"
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.342.tgz"
   integrity sha512-dTei3VResi5bINDENswBxhL+N0Mw5YnfWyTqO75KGsVldurEkhC9+CelJVAse8jycWyP8pv3VSj4BSyP8wTWJA==
+
+emoji-regex@^10:
+  version "10.2.1"
+  resolved "https://registry.npmjs.org/emoji-regex/-/emoji-regex-10.2.1.tgz"
+  integrity sha512-97g6QgOk8zlDRdgq1WxwgTMgEWGVAQvB5Fdpgc1MkNy56la5SKP9GsMXKDOdqwn90/41a8yPwIGk1Y6WVbeMQA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -1807,6 +1859,11 @@ git-raw-commits@^2.0.11:
     meow "^8.0.0"
     split2 "^3.0.0"
     through2 "^4.0.0"
+
+gitmojis@^3:
+  version "3.13.5"
+  resolved "https://registry.npmjs.org/gitmojis/-/gitmojis-3.13.5.tgz"
+  integrity sha512-MLM88QAaWpYWlvtBjHBxshI9AGRH+LLluD6NbhymeWp0EQ1Sew8SgC0BpiQuQ4DCYGKs9LcX4zRL3lDlwOPA5g==
 
 glob-parent@^5.1.2:
   version "5.1.2"
