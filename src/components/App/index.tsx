@@ -32,7 +32,7 @@ function App() {
           element={<Home />}
         />
         <Route
-          path="/country/:countryName"
+          path="/country/:cca3"
           element={<Detail />}
         />
       </Routes>

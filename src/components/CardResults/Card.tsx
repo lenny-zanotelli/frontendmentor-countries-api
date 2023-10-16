@@ -13,7 +13,7 @@ function Card({ country }: CountryProps) {
   const populationFormat = formatNumber(country.population);
   return (
     <Link
-      to={`/country/${country.name.common}`}
+      to={`/country/${country.cca3}`}
     >
       <div className="card">
         <img src={country.flags.png} alt={country.name.common} />

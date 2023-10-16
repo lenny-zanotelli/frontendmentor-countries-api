@@ -2,34 +2,47 @@
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
 import { useQuery } from '@tanstack/react-query';
-import { useEffect, useState } from 'react';
+import { CSSProperties, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import lookup from 'country-code-lookup';
 import { Country } from '../../@types/countries';
 import { getOneCountry } from '../../services/getOneCountry';
 import './styles.scss';
 import Layout from '../../components/Layout';
 import BackButton from '../../components/BackButton';
 import formatNumber from '../../utils/formatPopNumber';
+import { cca3ToNameMap } from '../../@types/cca3ToNameMap';
+import CircleLoader from 'react-spinners/CircleLoader';
+
+const override: CSSProperties = {
+  display: "block",
+  position: 'fixed',
+  zIndex: '1',
+  top: '50%',
+  left: '50%',
+};
 
 function Detail() {
-  const { countryName } = useParams();
+  const { cca3 } = useParams();
 
   const {
     isError, isLoading, data: country, error,
   } = useQuery<Country>(
-    ['country', countryName],
-    () => getOneCountry(countryName as string),
+    ['country', cca3],
+    () => getOneCountry(cca3 as string),
     { staleTime: 3000 },
   );
 
   useEffect(() => {
-    getOneCountry(countryName as string);
+    getOneCountry(cca3 as string);
   });
 
   if (isLoading) {
     console.log('Loading...');
-    return <div>Loading...</div>;
+    return <CircleLoader
+    cssOverride={override} 
+    aria-label='Loading Spinner' 
+    data-testid='loader' 
+    />;
   }
 
   if (isError) {
@@ -89,17 +102,16 @@ function Detail() {
               key={index}
             >
               <Link
-                to={`/country/${lookup.byIso(border)?.country}`}
+                to={`/country/${border}`}
                 key={index}
               >
-                {lookup.byIso(border)?.country}
+                {cca3ToNameMap[border]}
               </Link>
             </button>
           ))}
         </div>
 
       </section>
-
     </Layout>
 
   );
