@@ -25,13 +25,6 @@ export interface Country {
   timezones: string[];
   continents: string[];
   flags: Flags;
-  coatOfArms: CoatOfArms;
-  postalCode: PostalCode;
-}
-
-export interface CoatOfArms {
-  png: string;
-  svg: string;
 }
 
 export interface Flags {
@@ -50,9 +43,4 @@ export interface Name {
 export interface Translation {
   official: string;
   common: string;
-}
-
-export interface PostalCode {
-  format: string;
-  regex: string;
 }
