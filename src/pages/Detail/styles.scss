@@ -1,0 +1,43 @@
+@use './../../styles/vars';
+@import './../../styles/theme';
+
+.container__details {
+  .container__img {
+    img {
+      width: 320px;
+      height: 220px;
+    }
+  }
+}
+
+.container__top-content {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem auto;
+}
+.content__title {
+  font-weight: 800;
+  font-size: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.content__element--title {
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.element--information {
+  font-weight: 200;
+}
+
+.container__bottom-content {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem auto;
+}
+
+.border-content__subtitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
