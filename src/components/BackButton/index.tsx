@@ -1,12 +1,16 @@
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import './styles.scss';
 
 function BackButton() {
   return (
-    <button type="button">
+    <button
+     className='details__back-button'
+     type="button"
+    >
       <Link to="/">
         <AiOutlineArrowLeft />
-        Back
+        <span>Back</span>
       </Link>
     </button>
   );

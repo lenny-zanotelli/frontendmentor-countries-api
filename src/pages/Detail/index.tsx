@@ -58,10 +58,10 @@ function Detail() {
 
   return (
     <Layout>
-      <BackButton />
       <section 
         className='container__details'
         >
+        <BackButton />
         {/* --- IMAGE --- */}
         <div 
           className='container__img'

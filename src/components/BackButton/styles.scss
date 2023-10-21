@@ -1,0 +1,21 @@
+@use './../../styles/vars';
+@import './../../styles/theme';
+
+
+.details__back-button {
+  @include themify($themes) {
+    background: themed('elementsColor');
+    color: themed('textColor');
+  }
+  margin: 3rem auto;
+  font-size: vars.$detail-page;
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  box-shadow: -1px -1px 11px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+  background-color: vars.$light-backgroundColor;
+}
+
+span {
+  padding-left: 0.5rem;
+}
