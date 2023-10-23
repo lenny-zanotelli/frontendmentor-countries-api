@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
 import { useQuery } from '@tanstack/react-query';
-import { CSSProperties, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Country } from '../../@types/countries';
 import { cca3ToNameMap } from '../../@types/cca3ToNameMap';
@@ -10,18 +10,10 @@ import { getOneCountry } from '../../services/getOneCountry';
 import Layout from '../../components/Layout';
 import BackButton from '../../components/BackButton';
 import formatNumber from '../../utils/formatPopNumber';
-import CircleLoader from 'react-spinners/CircleLoader';
 
 import './styles.scss';
+import Loader from '../../components/Loader';
 
-
-const override: CSSProperties = {
-  display: "block",
-  position: 'fixed',
-  zIndex: '1',
-  top: '50%',
-  left: '50%',
-};
 
 function Detail() {
   const { cca3 } = useParams();
@@ -40,11 +32,7 @@ function Detail() {
 
   if (isLoading) {
     console.log('Loading...');
-    return <CircleLoader
-    cssOverride={override} 
-    aria-label='Loading Spinner' 
-    data-testid='loader' 
-    />;
+    return <Loader />;
   }
 
   if (isError) {

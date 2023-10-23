@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { CSSProperties, useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import './styles.scss';
 import { Country } from '../../@types/countries';
@@ -8,15 +8,7 @@ import Layout from '../../components/Layout';
 import SearchBar from '../../components/SearchBar';
 import FilterBar from '../../components/FilterBar';
 import CardResults from '../../components/CardResults';
-import { CircleLoader } from 'react-spinners';
-
-const override: CSSProperties = {
-  display: "block",
-  position: 'fixed',
-  zIndex: '1',
-  top: '50%',
-  left: '50%',
-};
+import Loader from '../../components/Loader';
 
 function Home() {
   const [textToSearch, setTextToSearch] = useState('');
@@ -32,11 +24,7 @@ function Home() {
 
   if (isLoading) {
     console.log('Loading...');
-    return <CircleLoader
-    cssOverride={override} 
-    aria-label='Loading Spinner' 
-    data-testid='loader' 
-    />;
+    return <Loader />;
   }
 
   if (isError) {

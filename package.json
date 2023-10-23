@@ -22,7 +22,8 @@
     "vite": "^4.2.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.7.2",
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-angular": "^18.0.0",
     "@commitlint/config-conventional": "^17.7.0",
     "@tanstack/eslint-plugin-query": "^4.34.1",
     "@types/react": "^18.0.28",
