@@ -7,7 +7,7 @@
     background: themed('elementsColor');
     color: themed('textColor');
   }
-  margin: 3rem auto;
+  margin: 1.5rem auto 3rem auto;
   font-size: vars.$detail-page;
   text-align: center;
   padding: 0.5rem 1.5rem;
@@ -18,4 +18,12 @@
 
 span {
   padding-left: 0.5rem;
+}
+
+@media screen and (min-width: 1028px) {
+  .details__back-button {
+    margin: 1.5rem auto 3rem 5rem;
+
+  }
+
 }

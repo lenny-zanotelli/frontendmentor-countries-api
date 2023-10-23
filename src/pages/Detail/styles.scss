@@ -2,16 +2,18 @@
 @import './../../styles/theme';
 
 .container__details {
+  margin: auto 1rem;
   .container__img {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 320px;
+    // align-content: center;
+    justify-content: flex-start;
+    width: 100%;
     height: 220px;
     img {
       height: 100%;
       width: 100%;
+      object-fit: contain
     }
   }
 }
@@ -56,9 +58,39 @@
   font-size: vars.$detail-page;
   text-align: center;
   padding: 0.5rem 1.5rem;
-  margin: 0.5rem 0.5rem;
+  margin: 0.5rem 0.20rem;
   box-shadow: -1px -1px 11px 4px rgba(0, 0, 0, 0.1);
   border: none;
   background-color: vars.$light-backgroundColor;
-
 }
+
+@media screen and (min-width: 1028px) {
+  .container__details {
+    width: 100%;
+    .container-desktop {
+      display: flex;
+      &__top-bottom {
+        display: flex;
+        width: 100%;
+        margin-top: 2rem
+      }
+    }
+    .container__top-content {
+      margin: 0;
+    }
+    .container__bottom-content {
+      padding-top: 0.45em;
+    } 
+    .container__img {
+      width: 50%;
+      height: 50vh;
+      margin: 0 8rem 0 5rem;
+      img {
+        object-fit: contain;
+
+      }
+    }
+
+  }
+}
+
