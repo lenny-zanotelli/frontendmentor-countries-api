@@ -45,8 +45,7 @@ Users should be able to:
 
 ### Continued development
 
-I need to improve the visual and the details page.
-Try to don't use the package country-code-lookup for borders countries.
+I need to improve the UI.
 
 ### Useful resources
 
