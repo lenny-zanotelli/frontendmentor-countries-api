@@ -20,14 +20,22 @@ const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 60000 } },
 });
 
+
+
 // On injecte notre application dans le DOM
 root.render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-      <Theme accentColor='crimson'>
+      <Theme
+        accentColor='gray'
+        grayColor='gray'
+        panelBackground='solid'
+        scaling='95%'
+        radius='full'
+      >
         <App />
-      </Theme> 
+      </Theme>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
