@@ -1,6 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { useContext } from 'react';
-import './styles.scss';
 import { ThemeContext } from '../../contexts/theme-context';
 import { Box, Flex, Heading, IconButton } from '@radix-ui/themes';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
@@ -16,9 +14,11 @@ function Header() {
 
   return (
     <Flex
-      className='header'
-      justify='between'
-      p='6'
+    justify='between'
+    p='6'
+    style={{
+      boxShadow: '0.5px 12px 15px 0px rgba(43, 57, 69, 0.1)'
+    }}
     >
       <Heading 
         as='h1'
