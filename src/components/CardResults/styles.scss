@@ -33,18 +33,15 @@
     background: themed('elementsColor');
     color: themed('textColor');
   }
-  width: 18rem;
-  height: 24rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .card img {
+  display: block;
+  object-fit: cover;
   max-width: 100%;
-  height: 45%;
+  height: 140;
   border-radius: 0.25rem;
 }
 
@@ -53,10 +50,6 @@
     background: themed('elementsColor');
     color: themed('textColor');
   }
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .card-element {
@@ -64,8 +57,4 @@
     background: themed('elementsColor');
     color: themed('textColor');
   }
-  padding: 0.5rem;
-  font-size: 1rem;
-  color: #555555;
-
 }
