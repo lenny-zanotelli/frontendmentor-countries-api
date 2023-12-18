@@ -2,6 +2,7 @@
 import Card from './Card';
 import './styles.scss';
 import { Country } from '../../@types/countries';
+import { Grid } from '@radix-ui/themes';
 
 interface CardResultsProps {
   countries: Country[];
@@ -20,7 +21,16 @@ function CardResults({ countries, searchText, selectedRegion }: CardResultsProps
   }
 
   return (
-    <section className="card-container">
+    <Grid 
+      display='grid' 
+      columns='4'
+      gap='9' 
+      justify='center' 
+      align='center'
+      style={{
+        maxWidth: 1500,
+      }}
+    > 
       {filteredCountries
         .map((country) => (
           <Card
@@ -28,7 +38,7 @@ function CardResults({ countries, searchText, selectedRegion }: CardResultsProps
             country={country}
           />
         ))}
-    </section>
+    </Grid>
 
   );
 }

@@ -1,9 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { useContext } from 'react';
-
 import './styles.scss';
-import { HiMoon, HiOutlineMoon } from 'react-icons/hi';
 import { ThemeContext } from '../../contexts/theme-context';
+import { Box, Flex, Heading, IconButton } from '@radix-ui/themes';
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 
 function Header() {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -15,20 +15,31 @@ function Header() {
   };
 
   return (
-    <header className="header">
-      <h1 className="header__title">Where in the world ?</h1>
+    <Flex
+      className='header'
+      justify='between'
+      p='6'
+    >
+      <Heading 
+        as='h1'
+        weight='bold'
+      >
+        Where in the world ?
+        </Heading>
 
-      <div className="header__toggle-btn-section">
-        <button
-          type="button"
-          className="header__theme"
+      <Box>
+        <IconButton
+          color='gray'
+          size='3'
+          variant='ghost'
           onClick={handleThemeChange}
         >
-          {theme === 'light' ? <HiOutlineMoon /> : <HiMoon />}
-          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-        </button>
-      </div>
-    </header>
+          {theme === 'light' ? 
+          <SunIcon width='22' height='22' /> 
+          : <MoonIcon width='22' height='22' />}
+        </IconButton>
+      </Box>
+    </Flex>
   );
 }
 

@@ -3,7 +3,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from '../../pages/Home';
 import { ThemeContext } from '../../contexts/theme-context';
-import './styles.scss';
 import Detail from '../../pages/Detail';
 import Header from '../Header';
 

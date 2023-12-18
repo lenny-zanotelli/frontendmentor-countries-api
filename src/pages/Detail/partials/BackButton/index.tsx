@@ -1,6 +1,6 @@
-import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import './styles.scss';
+import { ArrowLeftIcon } from '@radix-ui/react-icons';
 
 function BackButton() {
   return (
@@ -9,7 +9,7 @@ function BackButton() {
      type="button"
     >
       <Link to="/">
-        <AiOutlineArrowLeft />
+        <ArrowLeftIcon />
         <span>Back</span>
       </Link>
     </button>

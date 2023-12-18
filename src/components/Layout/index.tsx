@@ -1,3 +1,4 @@
+import { Flex } from '@radix-ui/themes';
 import './styles.scss';
 
 interface Layoutrops {
@@ -6,9 +7,17 @@ interface Layoutrops {
 
 function Layout({ children }: Layoutrops) {
   return (
-    <main className="page">
-      {children}
-    </main>
+    <Flex 
+      direction='column' 
+      justify='center' 
+      align='center'
+      style={{
+        margin: '0.76rem, 0.76rem'
+      }}
+    >
+      {children}      
+    </Flex>
+
   );
 }
 

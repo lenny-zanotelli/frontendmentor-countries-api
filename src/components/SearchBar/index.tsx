@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { HiOutlineSearch } from 'react-icons/hi';
+import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import './styles.scss';
 import {
   ChangeEvent, useState,
@@ -20,7 +20,7 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
 
   return (
     <div className="search-bar">
-      <span className="search-svg"><HiOutlineSearch /></span>
+      <span className="search-svg"><MagnifyingGlassIcon /></span>
       <input
         className="search-input"
         value={query}
