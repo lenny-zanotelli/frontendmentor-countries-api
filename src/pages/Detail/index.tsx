@@ -5,8 +5,8 @@ import { Country } from '../../@types/countries';
 import { cca3ToNameMap } from '../../@types/cca3ToNameMap';
 import { getOneCountry } from '../../services/getOneCountry';
 import Layout from '../../components/Layout';
-import BackButton from '../../components/BackButton';
 import Loader from '../../components/Loader';
+import BackButton from './partials/BackButton';
 import formatNumber from '../../utils/formatPopNumber';
 
 import './styles.scss';
