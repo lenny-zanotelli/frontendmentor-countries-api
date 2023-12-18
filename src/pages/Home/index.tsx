@@ -41,7 +41,6 @@ function Home() {
   };
 
   return (
-    <div>
       <Layout>
         <div className="container-searchFilter">
           <SearchBar onSubmitSearch={handleSubmitSearch} />
@@ -53,7 +52,6 @@ function Home() {
           selectedRegion={selectedRegion}
         />
       </Layout>
-    </div>
   );
 }
 

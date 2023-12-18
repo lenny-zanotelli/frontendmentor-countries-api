@@ -3,12 +3,14 @@ $themes: (
   light: (
     textColor: hsl(200, 15%, 8%),
     backgroundColor: hsl(0, 0%, 98%),
+    backgroundColorSolid: hsl(0, 0%, 43%),  
     inputColor: hsl(0, 0%, 52%),
     boxShadowColor: rgba(224, 199, 199, 0.438)
   ),
   dark: (
     textColor: hsl(0, 0%, 100%),
-    backgroundColor: hsl(207, 26%, 17%),
+    backgroundColor: hsl(209, 26%, 17%),
+    backgroundColorSolid: hsl(0, 0%, 43%),
     elementsColor: rgba(43, 57, 69, 1),
     boxShadowColor: rgba(43, 57, 69, 0.445)
 
