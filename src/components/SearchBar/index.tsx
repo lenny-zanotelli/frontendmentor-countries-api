@@ -4,6 +4,7 @@ import './styles.scss';
 import {
   ChangeEvent, useState,
 } from 'react';
+import { TextFieldInput, TextFieldRoot, TextFieldSlot } from '@radix-ui/themes';
 
 interface SearchBarProps {
   onSubmitSearch: (searchText: string) => void;
@@ -19,18 +20,17 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
   };
 
   return (
-    <div className="search-bar">
-      <span className="search-svg"><MagnifyingGlassIcon /></span>
-      <input
-        className="search-input"
-        value={query}
-        onChange={handleChange}
-        name="searchbar"
-        type="text"
-        placeholder="Search for a country..."
-      />
-    </div>
 
+    <TextFieldRoot size='3' color='gray'>
+      <TextFieldSlot color='gray'>
+        <MagnifyingGlassIcon height='18' width='18' />
+      </TextFieldSlot>
+      <TextFieldInput 
+        placeholder='Search for a country...' 
+        size='3' 
+        color='gray' 
+      />
+    </TextFieldRoot>
   );
 }
 
