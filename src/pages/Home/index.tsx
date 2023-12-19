@@ -5,7 +5,7 @@ import { Country } from '../../@types/countries';
 import { getAllCountries } from '../../services/getAllCountries';
 import Layout from '../../components/Layout';
 import SearchBar from '../../components/SearchBar';
-import FilterBar from '../../components/FilterBar';
+import Select from '../../components/Select';
 import CardResults from '../../components/CardResults';
 import Loader from '../../components/Loader';
 import { Flex } from '@radix-ui/themes';
@@ -51,7 +51,7 @@ function Home() {
           }}
         >
           <SearchBar onSubmitSearch={handleSubmitSearch} />
-          <FilterBar countries={allCountries} onSelectRegion={handleSelectRegion} />
+          <Select countries={allCountries} onSelectRegion={handleSelectRegion} />
         </Flex>
         <CardResults
           countries={allCountries}
