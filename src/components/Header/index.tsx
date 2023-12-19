@@ -39,8 +39,8 @@ function Header() {
           : <MoonIcon width='22' height='22' />}
         </IconButton>
       </Box>
-    </Flex>
-  );
+    </Flex> 
+    );
 }
 
 export default Header;

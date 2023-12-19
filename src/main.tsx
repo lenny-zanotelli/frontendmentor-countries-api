@@ -32,7 +32,7 @@ root.render(
         grayColor='gray'
         panelBackground='solid'
         scaling='95%'
-        radius='full'
+        radius='none'
       >
         <App />
       </Theme>
