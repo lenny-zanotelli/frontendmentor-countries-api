@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
-import './styles.scss';
 import {
   ChangeEvent, useState,
 } from 'react';
@@ -25,7 +24,8 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
       <TextFieldSlot color='gray'>
         <MagnifyingGlassIcon height='18' width='18' />
       </TextFieldSlot>
-      <TextFieldInput 
+      <TextFieldInput
+        onChange={handleChange} 
         placeholder='Search for a country...' 
         size='3' 
         color='gray' 
