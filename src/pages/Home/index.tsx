@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import './styles.scss';
 import { Country } from '../../@types/countries';
 import { getAllCountries } from '../../services/getAllCountries';
 import Layout from '../../components/Layout';
@@ -9,6 +8,7 @@ import SearchBar from '../../components/SearchBar';
 import FilterBar from '../../components/FilterBar';
 import CardResults from '../../components/CardResults';
 import Loader from '../../components/Loader';
+import { Flex } from '@radix-ui/themes';
 
 function Home() {
   const [textToSearch, setTextToSearch] = useState('');
@@ -42,10 +42,17 @@ function Home() {
 
   return (
       <Layout>
-        <div className="container-searchFilter">
+        <Flex
+          justify='between'
+          shrink='1'
+          py='9'
+          style={{
+            width: 1500
+          }}
+        >
           <SearchBar onSubmitSearch={handleSubmitSearch} />
           <FilterBar countries={allCountries} onSelectRegion={handleSelectRegion} />
-        </div>
+        </Flex>
         <CardResults
           countries={allCountries}
           searchText={textToSearch}

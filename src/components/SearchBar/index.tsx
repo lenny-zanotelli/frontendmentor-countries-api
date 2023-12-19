@@ -25,6 +25,7 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
         <MagnifyingGlassIcon height='18' width='18' />
       </TextFieldSlot>
       <TextFieldInput
+        value={query}
         onChange={handleChange} 
         placeholder='Search for a country...' 
         size='3' 
