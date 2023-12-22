@@ -10,7 +10,7 @@ function BackButton() {
       color='gray'
       highContrast
       style={{
-        margin: '4.5rem auto 1.5rem 4.8rem'
+        margin: '4.5rem auto auto 4.8rem'
       }}
     >
       <Link to="/">
