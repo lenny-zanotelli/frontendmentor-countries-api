@@ -14,9 +14,12 @@ function CardComponent({ country }: CountryProps) {
 
       <Card asChild size='4' style={{ maxWidth: 450 }} variant='surface' >
         <Link to={`/country/${country.cca3}`}>
-          <Flex gap='3' justify='between' direction='column'>
+          <Flex 
+            gap='3' 
+            justify='between' 
+            direction='column'
+          >
             <Inset pb='current'>
-
               <img 
               src={country.flags.png} 
               alt={country.name.common}
