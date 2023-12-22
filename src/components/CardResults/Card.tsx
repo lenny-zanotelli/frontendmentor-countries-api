@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { Country } from '../../@types/countries';
 import { Card, Flex, Heading, Inset, Strong, Text } from '@radix-ui/themes';
 import formatNumber from '../../utils/formatPopNumber';
-import './styles.scss';
 
 interface CountryProps {
   country: Country,

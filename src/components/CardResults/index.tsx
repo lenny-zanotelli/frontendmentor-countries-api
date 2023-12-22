@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Card from './Card';
-import './styles.scss';
 import { Country } from '../../@types/countries';
 import { Grid } from '@radix-ui/themes';
 
