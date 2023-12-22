@@ -1,18 +1,34 @@
 import { Link } from 'react-router-dom';
-import './styles.scss';
 import { ArrowLeftIcon } from '@radix-ui/react-icons';
+import { Button, Text } from '@radix-ui/themes';
 
 function BackButton() {
   return (
-    <button
-     className='details__back-button'
-     type="button"
+    <Button
+      size='4'
+      variant='surface'
+      color='gray'
+      highContrast
+      style={{
+        margin: '4.5rem auto 1.5rem 4.8rem'
+      }}
     >
       <Link to="/">
-        <ArrowLeftIcon />
-        <span>Back</span>
+        <ArrowLeftIcon width='18' height='18' />
+        <Text
+          as='span'
+          size='5'
+          weight='medium'
+          color='gray'
+          align='center'
+          style={{
+            paddingLeft: '0.5rem'
+          }}
+        >
+          Back
+        </Text>
       </Link>
-    </button>
+    </Button>
   );
 }
 
