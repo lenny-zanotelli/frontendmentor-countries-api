@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { Country } from "../../../../@types/countries";
 import { cca3ToNameMap } from "../../../../@types/cca3ToNameMap";
 import Loader from "../../../../components/Loader";
-import { AspectRatio, Box, Button, Flex, Grid, Heading, Text } from "@radix-ui/themes";
+import { Box, Button, Flex, Grid, Heading, Text } from "@radix-ui/themes";
 
 
 

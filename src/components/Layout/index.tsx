@@ -1,5 +1,4 @@
 import { Flex } from '@radix-ui/themes';
-import './styles.scss';
 
 interface Layoutrops {
   children: React.ReactNode;
