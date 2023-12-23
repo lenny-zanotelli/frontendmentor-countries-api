@@ -7,11 +7,11 @@ interface Layoutrops {
 function Layout({ children }: Layoutrops) {
   return (
     <Flex 
-      direction='column' 
-      justify='center' 
+      direction='column'
+      justify='center'
       align='center'
       style={{
-        margin: '0.76rem, 0.76rem'
+        margin: '0.76rem, 0.76rem',
       }}
     >
       {children}      

@@ -24,7 +24,7 @@ function Select({ countries, onSelectRegion } : SelectBarProps) {
     <SelectRoot 
       onValueChange={handleChange} 
       value={selectedOption} 
-      size='3' 
+      size='3'
     >
       <SelectTrigger placeholder='Filter by Region' />
       <SelectContent>

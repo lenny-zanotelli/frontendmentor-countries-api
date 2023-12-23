@@ -15,9 +15,11 @@ function Header() {
   return (
     <Flex
     justify='between'
+    align='center'
     p='6'
+    width='100%'
     style={{
-      boxShadow: '0.5px 12px 15px 0px rgba(43, 57, 69, 0.1)'
+      boxShadow: '0 1px var(--gray-a4)'
     }}
     >
       <Heading 

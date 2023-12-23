@@ -22,13 +22,9 @@ function CardResults({ countries, searchText, selectedRegion }: CardResultsProps
   return (
     <Grid 
       display='grid' 
-      columns='4'
-      gap='9' 
-      justify='center' 
-      align='center'
-      style={{
-        maxWidth: 1500,
-      }}
+      columns={{ initial: '1', sm: '2', lg: '4'}}
+      gapX='7'
+      gapY='5'
     > 
       {filteredCountries
         .map((country) => (

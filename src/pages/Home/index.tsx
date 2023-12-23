@@ -44,11 +44,12 @@ function Home() {
       <Layout>
         <Flex
           justify='between'
-          shrink='1'
-          py='9'
-          style={{
-            width: 1500
-          }}
+          align={{initial: 'start',sm: 'center' }}
+          gap={{initial: '5', sm: '9'}}
+          my='9'
+          mx='4'
+          width='max-content'
+          direction={{initial: 'column', sm: 'row'}}
         >
           <SearchBar onSubmitSearch={handleSubmitSearch} />
           <Select countries={allCountries} onSelectRegion={handleSelectRegion} />
