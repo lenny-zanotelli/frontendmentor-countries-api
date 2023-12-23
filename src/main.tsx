@@ -31,7 +31,7 @@ root.render(
         accentColor='gray'
         grayColor='gray'
         panelBackground='solid'
-        scaling='95%'
+        scaling='100%'
         radius='none'
       >
         <App />

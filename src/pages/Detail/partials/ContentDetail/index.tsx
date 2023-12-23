@@ -154,25 +154,27 @@ function ContentDetail() {
           >
 
             <Heading as='h3' size='3'>Border Countries:</Heading>
-            {country?.borders?.map((border, index) => (
-   
-              <Button
-                size='2'
-                variant='surface'
-                color='gray'
-                highContrast
-                key={index}
-              >
-                <Link to={`/country/${border}`}>
-                  {cca3ToNameMap[border]}
-                </Link>
-              </Button>
 
-            ))}
+            {country.borders ? (
+              country.borders.map((border, index) => (
+                <Button
+                  size='2'
+                  variant='surface'
+                  color='gray'
+                  highContrast
+                  key={index}
+                >
+                  <Link to={`/country/${border}`}>
+                    {cca3ToNameMap[border]}
+                  </Link>
+                </Button>
+            ))
+            ) : (
+              <Text as='span'>&nbsp;No borders</Text>
+            )}
             
           </Flex>
       </Flex>
-
     </Grid>
 
   );
