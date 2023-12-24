@@ -8,7 +8,6 @@ function BackButton() {
       size='4'
       variant='surface'
       color='gray'
-      highContrast
       style={{
         margin: '4.5rem auto auto 0'
       }}
