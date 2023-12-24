@@ -39,7 +39,7 @@ function ContentDetail() {
   }
   return(
     <Grid 
-      columns='1'
+      columns={{initial: '1', md: '2'}}
       gap='6'
       justify='center' 
       style={{ 
@@ -150,11 +150,10 @@ function ContentDetail() {
         </Flex>
 
           <Flex 
-            direction='column'
-            justify='start' 
-            align='start'
-            wrap='wrap'
-            mt='9'
+            direction={{initial: 'column', md: 'row'}}
+            justify='start'
+            align={{initial: 'start', md: 'center'}}
+            mt={{initial: '9', sm:'1', md: '2'}}
             gap='2'
           >
 
@@ -163,8 +162,7 @@ function ContentDetail() {
             <Flex
               gap='2'
               mt='3'
-              mb='9'
-              wrap='wrap'
+              mb={{initial: '9',md: '2'}}
               style={{
                 maxWidth: 280
               }}
