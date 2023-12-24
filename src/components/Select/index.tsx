@@ -26,7 +26,7 @@ function Select({ countries, onSelectRegion } : SelectBarProps) {
       value={selectedOption} 
       size='3'
     >
-      <SelectTrigger placeholder='Filter by Region' />
+      <SelectTrigger variant='classic' placeholder='Filter by Region' />
       <SelectContent>
 
         <SelectGroup >
