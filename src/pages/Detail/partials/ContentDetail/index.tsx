@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { Country } from "../../../../@types/countries";
 import { cca3ToNameMap } from "../../../../@types/cca3ToNameMap";
 import Loader from "../../../../components/Loader";
-import { Box, Button, Flex, Grid, Heading, Text } from "@radix-ui/themes";
+import { AspectRatio, Box, Button, Flex, Grid, Heading, Text } from "@radix-ui/themes";
 
 
 
@@ -39,33 +39,36 @@ function ContentDetail() {
   }
   return(
     <Grid 
-      columns='2' 
-      gap='9'
+      columns='1'
+      gap='6'
       justify='center' 
       style={{ 
-        width: 1500
+        maxWidth: 1500
       }}
     >
       <Box width='auto' height='auto'>
+        <AspectRatio ratio={16 / 9}>
           <img
             src={country.flags.svg}
             alt={country.name.common}
             style={{
-              objectFit: 'contain',
+              objectFit: 'cover',
               width: '100%',
               height: '100%',
             }}
           />
+        </AspectRatio>
       </Box>
 
-      <Flex direction='column' mt='9'>
-        <Box width='100%' height='max-content' mb='9'>
+      <Flex direction='column'
+        >
+        <Box width='100%' height='max-content' mb='6'>
           <Heading as='h1' size='8'>
             {country.name.common}
           </Heading>
         </Box>
 
-        <Flex direction='row'>
+        <Flex direction={{initial: 'column', sm: 'row'}}>
 
             <Flex 
               direction='column'
@@ -147,31 +150,44 @@ function ContentDetail() {
         </Flex>
 
           <Flex 
+            direction='column'
             justify='start' 
-            align='center'
+            align='start'
             wrap='wrap'
+            mt='9'
             gap='2'
           >
 
-            <Heading as='h3' size='3'>Border Countries:</Heading>
+            <Heading as='h3' size='4'>Border Countries:</Heading>
 
-            {country.borders ? (
-              country.borders.map((border, index) => (
-                <Button
-                  size='2'
-                  variant='surface'
-                  color='gray'
-                  highContrast
-                  key={index}
-                >
-                  <Link to={`/country/${border}`}>
-                    {cca3ToNameMap[border]}
-                  </Link>
-                </Button>
-            ))
-            ) : (
-              <Text as='span'>&nbsp;No borders</Text>
-            )}
+            <Flex
+              gap='2'
+              mt='3'
+              mb='9'
+              wrap='wrap'
+              style={{
+                maxWidth: 280
+              }}
+            >
+              {country.borders ? (
+              
+                country.borders.map((border, index) => (
+                  <Button
+                    size='1'
+                    variant='surface'
+                    color='gray'
+                    key={index}
+                  >
+                    <Link to={`/country/${border}`}>
+                      {cca3ToNameMap[border]}
+                    </Link>
+                  </Button>
+              ))
+              ) : (
+                <Text as='span'>&nbsp;No borders</Text>
+              )}
+            </Flex>
+                  
             
           </Flex>
       </Flex>

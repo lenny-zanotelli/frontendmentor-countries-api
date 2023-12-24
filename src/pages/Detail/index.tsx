@@ -13,6 +13,7 @@ function Detail() {
         direction='column' 
         width='max-content'
         gap='9'
+        mt='-5'
       >
         <BackButton />
         <ContentDetail />
