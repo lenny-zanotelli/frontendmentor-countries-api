@@ -20,7 +20,11 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
 
   return (
 
-    <TextFieldRoot size='3' color='gray'>
+    <TextFieldRoot 
+        variant='classic' 
+        size='3' 
+        color='gray'
+      >
       <TextFieldSlot color='gray'>
         <MagnifyingGlassIcon height='18' width='18' />
       </TextFieldSlot>
@@ -29,7 +33,8 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
         onChange={handleChange} 
         placeholder='Search for a country...' 
         size='3' 
-        color='gray' 
+        color='gray'
+        variant='classic'
       />
     </TextFieldRoot>
   );
