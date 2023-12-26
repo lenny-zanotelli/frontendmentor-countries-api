@@ -162,6 +162,7 @@ function ContentDetail() {
             <Flex
               gap='2'
               mt='3'
+              wrap={{initial: 'wrap', xl: 'nowrap'}}
               mb={{initial: '9',md: '2'}}
               style={{
                 maxWidth: 280
