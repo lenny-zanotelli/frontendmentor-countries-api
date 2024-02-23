@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom";
-import { getOneCountry } from "../../../../services/getOneCountry";
+import getOneCountry from "../../../../services/getOneCountry";
 import { useEffect } from "react";
 import { Country } from "../../../../@types/countries";
 import { cca3ToNameMap } from "../../../../@types/cca3ToNameMap";
