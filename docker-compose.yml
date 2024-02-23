@@ -3,8 +3,8 @@ services:
     container_name: countries-api
     image: torigon/countries-api:latest
     environment:
-      - VIRTUAL_HOST: where-in-the-world.torigon.fr
-      - LETSENCRYPT_HOST: where-in-the-world.torigon.fr
+      VIRTUAL_HOST: where-in-the-world.torigon.fr
+      LETSENCRYPT_HOST: where-in-the-world.torigon.fr
   
   nginx:
     container_name: nginx
