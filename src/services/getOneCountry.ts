@@ -1,6 +1,6 @@
 import { axiosInstance as axios } from "../utils/axios";
 
-export const getOneCountry = async (cca3: string) => {
+const getOneCountry = async (cca3: string) => {
   try {
     console.log('Fetching info of the Country');
     const response = await axios.get(`/alpha/${cca3}`);
@@ -17,3 +17,5 @@ export const getOneCountry = async (cca3: string) => {
     console.error(error);
   }
 };
+
+export default getOneCountry;

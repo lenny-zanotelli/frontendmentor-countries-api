@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Country } from '../../@types/countries';
-import { getAllCountries } from '../../services/getAllCountries';
+import getAllCountries from '../../services/getAllCountries';
 import Layout from '../../components/Layout';
 import SearchBar from '../../components/SearchBar';
 import Select from '../../components/Select';
