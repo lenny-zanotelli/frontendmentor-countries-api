@@ -2,6 +2,8 @@ services:
   countriesapi:
     container_name: countries-api
     image: torigon/countries-api:latest
+    expose:
+      - 8000
   
   nginx:
     container_name: nginx
