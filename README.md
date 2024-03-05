@@ -45,7 +45,7 @@ Users should be able to:
 
 ### Continued development
 
-I need to improve the UI (22/12/2023: MOBILE WORKFLOW WITH RADIX UX IS NOT FINISHED YET), .
+Fix the spinner position when loading, .
 
 ### Useful resources
 
