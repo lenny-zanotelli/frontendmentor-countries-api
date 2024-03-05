@@ -45,7 +45,7 @@ Users should be able to:
 
 ### Continued development
 
-Fix the spinner position when loading, .
+Fix the spinner position when loading,
 
 ### Useful resources
 
