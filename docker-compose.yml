@@ -3,7 +3,8 @@ services:
     container_name: countries-api
     image: torigon/countries-api:latest
     environment:
-      - VIRTUAL_HOST= where-in-the-world.torigon.fr
+      - VIRTUAL_HOST: where-in-the-world.torigon.fr
+      - LETSENCRYPT_HOST: where-in-the-world.torigon.fr
   
   nginx:
     container_name: nginx
@@ -21,3 +22,15 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+  
+  letsencrypt-companion:
+  container_name: letsencrypt-companion
+  image: jrcs/letsencrypt-nginx-proxy-companion
+  restart: unless-stopped
+  volumes_from:
+      - nginx
+  volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./nginx/acme:/etc/acme.sh
+  environment:
+      DEFAULT_EMAIL: lenny.zanotelli24@gmail.com
