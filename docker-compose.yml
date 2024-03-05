@@ -24,13 +24,13 @@ services:
         max-file: "3"
   
   letsencrypt-companion:
-  container_name: letsencrypt-companion
-  image: jrcs/letsencrypt-nginx-proxy-companion
-  restart: unless-stopped
-  volumes_from:
-      - nginx
-  volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./nginx/acme:/etc/acme.sh
-  environment:
-      DEFAULT_EMAIL: lenny.zanotelli24@gmail.com
+    container_name: letsencrypt-companion
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    restart: unless-stopped
+    volumes_from:
+        - nginx
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ./nginx/acme:/etc/acme.sh
+    environment:
+        DEFAULT_EMAIL: lenny.zanotelli24@gmail.com
