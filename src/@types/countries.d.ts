@@ -4,7 +4,7 @@ export interface Country {
   status: string;
   unMember: boolean;
   currencies: {
-    [currencyCode: string] : {
+    [currencyCode: string]: {
       name: string;
       symbol: string;
     };
@@ -15,9 +15,9 @@ export interface Country {
   subregion: string;
   tld: string;
   languages: {
-    [languageCode: string] : {
+    [languageCode: string]: {
       name: string;
-    }
+    };
   };
   translations: { [key: string]: Translation };
   borders: string[];

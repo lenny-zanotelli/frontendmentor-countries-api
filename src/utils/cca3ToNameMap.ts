@@ -1,4 +1,4 @@
-export const cca3ToNameMap: {[key: string]: string} = {
+export const cca3ToNameMap: { [key: string]: string } = {
   AFG: 'Afghanistan',
   ALA: 'Åland Islands',
   ALB: 'Albania',

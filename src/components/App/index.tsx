@@ -7,7 +7,8 @@ import Header from '../Header';
 
 function App() {
   // Detecting the default theme
-  const isBrowserDefaultDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isBrowserDefaultDark = () =>
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
   const getDefautlTheme = (): string => {
     const localStorageTheme = localStorage.getItem('default-theme');
     const browserDefault = isBrowserDefaultDark() ? 'dark' : 'light';
@@ -23,19 +24,12 @@ function App() {
 
   return (
     <ThemeContext.Provider value={themeMemo}>
-        <Header />
-        <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-          />
-          <Route
-            path="/country/:cca3"
-            element={<Detail />}
-          />
-        </Routes>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/country/:cca3" element={<Detail />} />
+      </Routes>
     </ThemeContext.Provider>
-
   );
 }
 

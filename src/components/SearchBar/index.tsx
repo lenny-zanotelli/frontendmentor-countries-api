@@ -1,8 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
-import {
-  ChangeEvent, useState,
-} from 'react';
+import { ChangeEvent, useState } from 'react';
 import { TextFieldInput, TextFieldRoot, TextFieldSlot } from '@radix-ui/themes';
 
 interface SearchBarProps {
@@ -19,22 +17,17 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
   };
 
   return (
-
-    <TextFieldRoot 
-        variant='classic' 
-        size='3' 
-        color='gray'
-      >
-      <TextFieldSlot color='gray'>
-        <MagnifyingGlassIcon height='18' width='18' />
+    <TextFieldRoot variant="classic" size="3" color="gray">
+      <TextFieldSlot color="gray">
+        <MagnifyingGlassIcon height="18" width="18" />
       </TextFieldSlot>
       <TextFieldInput
         value={query}
-        onChange={handleChange} 
-        placeholder='Search for a country...' 
-        size='3' 
-        color='gray'
-        variant='classic'
+        onChange={handleChange}
+        placeholder="Search for a country..."
+        size="3"
+        color="gray"
+        variant="classic"
       />
     </TextFieldRoot>
   );

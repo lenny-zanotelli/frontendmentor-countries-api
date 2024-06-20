@@ -1,11 +1,12 @@
 import { Country } from '../@types/countries';
-import { axiosInstance as axios } from '../utils/axios';
+
+const baseUrl = import.meta.env.VITE_PRIVATE_API_URL;
 
 const getAllCountries = async (): Promise<Country[]> => {
   try {
     console.log('Fetching Countries');
-    const response = await axios.get('/all');
-    const countries = response.data;
+    const response = await fetch(`${baseUrl}/all`);
+    const countries = await response.json();
 
     console.log('Countries :', countries);
     return countries;

@@ -5,21 +5,21 @@ import { Button, Text } from '@radix-ui/themes';
 function BackButton() {
   return (
     <Button
-      size='4'
-      variant='surface'
-      color='gray'
+      size="4"
+      variant="surface"
+      color="gray"
       style={{
         margin: '4.5rem auto auto 0'
       }}
     >
       <Link to="/">
-        <ArrowLeftIcon width='18' height='18' />
+        <ArrowLeftIcon width="18" height="18" />
         <Text
-          as='span'
-          size='5'
-          weight='medium'
-          color='gray'
-          align='center'
+          as="span"
+          size="5"
+          weight="medium"
+          color="gray"
+          align="center"
           style={{
             paddingLeft: '0.5rem'
           }}

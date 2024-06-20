@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/theme-context';
-import { Box, Flex, Heading, IconButton, AccessibleIcon } from '@radix-ui/themes';
+import { Box, Flex, Heading, IconButton } from '@radix-ui/themes';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 
 function Header() {
@@ -14,40 +14,37 @@ function Header() {
 
   return (
     <Flex
-    justify='between'
-    align='center'
-    p='6'
-    width='100%'
-    style={{
-      boxShadow: '0 1px var(--gray-a4)'
-    }}
+      justify="between"
+      align="center"
+      p="6"
+      width="100%"
+      style={{
+        boxShadow: '0 1px var(--gray-a4)'
+      }}
     >
-      <Heading 
-        as='h1'
-        weight='bold'
-        size={{initial: '4', sm: '6'}}
-      >
+      <Heading as="h1" weight="bold" size={{ initial: '4', sm: '6' }}>
         Where in the world ?
-        </Heading>
+      </Heading>
 
       <Box>
         <IconButton
           aria-
-          color='gray'
-          size='3'
-          variant='ghost'
+          color="gray"
+          size="3"
+          variant="ghost"
           onClick={handleThemeChange}
         >
-          {theme === 'light' ?
-          <>
-            <SunIcon width='22' height='22' />
-            <AccessibleIcon label='Icon Light Mode' />
-          </>
-          : <MoonIcon width='22' height='22' aria-labelledby='Icon Dark Mode' />}
+          {theme === 'light' ? (
+            <>
+              <SunIcon width="22" height="22" />
+            </>
+          ) : (
+            <MoonIcon width="22" height="22" />
+          )}
         </IconButton>
       </Box>
-    </Flex> 
-    );
+    </Flex>
+  );
 }
 
 export default Header;
