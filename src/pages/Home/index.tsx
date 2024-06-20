@@ -5,7 +5,7 @@ import { Country } from '../../@types/countries';
 import getAllCountries from '../../services/getAllCountries';
 import Layout from '../../components/Layout';
 import SearchBar from '../../components/SearchBar';
-import Select from '../../components/Select';
+import Select from '../../components/Filter';
 import CardResults from '../../components/CardResults';
 import Loader from '../../components/Loader';
 import { Flex } from '@radix-ui/themes';

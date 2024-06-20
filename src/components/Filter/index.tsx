@@ -30,7 +30,7 @@ function Select({ countries, onSelectRegion } : SelectBarProps) {
       <SelectContent>
 
         <SelectGroup >
-          <SelectLabel>Filter by Region</SelectLabel>
+          <SelectLabel aria-labelledby='Aria Filter by Region'>Filter by Region</SelectLabel>
           {regionsArray
           .map((region => (
             <SelectItem 

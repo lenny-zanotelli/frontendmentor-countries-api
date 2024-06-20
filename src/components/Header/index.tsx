@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/theme-context';
-import { Box, Flex, Heading, IconButton } from '@radix-ui/themes';
+import { Box, Flex, Heading, IconButton, AccessibleIcon } from '@radix-ui/themes';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 
 function Header() {
@@ -32,14 +32,18 @@ function Header() {
 
       <Box>
         <IconButton
+          aria-
           color='gray'
           size='3'
           variant='ghost'
           onClick={handleThemeChange}
         >
-          {theme === 'light' ? 
-          <SunIcon width='22' height='22' /> 
-          : <MoonIcon width='22' height='22' />}
+          {theme === 'light' ?
+          <>
+            <SunIcon width='22' height='22' />
+            <AccessibleIcon label='Icon Light Mode' />
+          </>
+          : <MoonIcon width='22' height='22' aria-labelledby='Icon Dark Mode' />}
         </IconButton>
       </Box>
     </Flex> 
