@@ -28,7 +28,7 @@ function Header() {
 
       <Box>
         <IconButton
-          aria-
+          aria-label='switch mode'
           color="gray"
           size="3"
           variant="ghost"

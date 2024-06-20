@@ -28,7 +28,7 @@ function Select({ countries, onSelectRegion }: SelectBarProps) {
     onSelectRegion(selectedRegion);
   };
   return (
-    <SelectRoot onValueChange={handleChange} value={selectedOption} size="3">
+    <SelectRoot onValueChange={handleChange} value={selectedOption} size="3" aria-label='Filter by region'>
       <SelectTrigger variant="classic" placeholder="Filter by Region" />
       <SelectContent>
         <SelectGroup>
