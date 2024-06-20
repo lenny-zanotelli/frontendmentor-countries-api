@@ -19,7 +19,7 @@ function Home() {
   } = useQuery<Country[]>(
     ['countries'],
     getAllCountries,
-    { staleTime: 3000 },
+    { staleTime: 5 * 60 * 1000 },
   );
 
   if (isLoading) {
