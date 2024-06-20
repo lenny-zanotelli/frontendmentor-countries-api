@@ -1,11 +1,9 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { useEffect, useMemo, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from '../../pages/Home';
 import { ThemeContext } from '../../contexts/theme-context';
 import Detail from '../../pages/Detail';
 import Header from '../Header';
-import { Theme } from '@radix-ui/themes';
 
 function App() {
   // Detecting the default theme
