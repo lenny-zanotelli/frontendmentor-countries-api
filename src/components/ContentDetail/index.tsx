@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom";
-import getOneCountry from "../../../../services/getOneCountry";
 import { useEffect } from "react";
-import { Country } from "../../../../@types/countries";
-import { cca3ToNameMap } from "../../../../@types/cca3ToNameMap";
-import Loader from "../../../../components/Loader";
 import { AspectRatio, Box, Button, Flex, Grid, Heading, Text } from "@radix-ui/themes";
+import { Country } from "../../@types/countries";
+import getOneCountry from "../../services/getOneCountry";
+import { cca3ToNameMap } from "../../utils/cca3ToNameMap";
+import Loader from "../Loader";
 
 
 
@@ -17,7 +17,7 @@ function ContentDetail() {
   } = useQuery<Country>(
     ['country', cca3],
     () => getOneCountry(cca3 as string),
-    { staleTime: 3000 },
+    { staleTime: 5 * 60 * 1000 },
   );
 
   useEffect(() => {

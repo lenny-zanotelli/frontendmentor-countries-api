@@ -1,5 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import Card from './Card';
+import Card from '../Card/Card';
 import { Country } from '../../@types/countries';
 import { Grid } from '@radix-ui/themes';
 

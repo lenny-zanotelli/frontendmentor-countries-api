@@ -1,7 +1,7 @@
 import { Flex } from '@radix-ui/themes';
 import Layout from '../../components/Layout';
-import BackButton from './partials/BackButton';
-import ContentDetail from './partials/ContentDetail';
+import BackButton from '../../components/BackButton';
+import ContentDetail from '../../components/ContentDetail';
 
 
 function Detail() {
