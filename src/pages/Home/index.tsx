@@ -22,6 +22,14 @@ function Home() {
     staleTime: 5 * 60 * 1000
   });
 
+  const handleSubmitSearch = useCallback((searchText: string) => {
+    setTextToSearch(searchText);
+  } ,[]);
+
+  const handleSelectRegion = useCallback((region: string) => {
+    setSelectedRegion(region)
+  }, []);
+  
   if (isLoading) {
     console.log('Loading...');
     return <Loader />;
@@ -32,13 +40,6 @@ function Home() {
     return <div>Error...</div>;
   }
 
-  const handleSubmitSearch = useCallback((searchText: string) => {
-    setTextToSearch(searchText);
-  } ,[]);
-
-  const handleSelectRegion = useCallback((region: string) => {
-    setSelectedRegion(region)
-  }, []);
 
   return (
     <Layout>
