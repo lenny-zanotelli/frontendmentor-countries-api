@@ -34,7 +34,17 @@ function Home() {
 
   const { currentPage, startIndex, endIndex, pageSize, totalPages, goToPage } = usePagination(allCountries?.length);
 
-  const paginatedCountries = allCountries ? allCountries?.slice(startIndex, endIndex + 1) : [];
+  const filteredCountries = allCountries
+    ? allCountries.filter(country =>
+        country.name.common.toLowerCase().includes(textToSearch.toLowerCase())
+      )
+    : [];
+
+  const regionFilteredCountries = selectedRegion
+    ? filteredCountries.filter(country => country.region === selectedRegion)
+    : filteredCountries;
+      
+  const paginatedCountries = regionFilteredCountries.slice(startIndex, endIndex + 1);
 
   if (isLoading) {
     console.log('Loading...');
