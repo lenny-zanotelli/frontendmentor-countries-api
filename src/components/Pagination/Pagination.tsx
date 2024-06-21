@@ -7,15 +7,23 @@ interface PaginationProps {
 }
 
 function Pagination({ currentPage, totalPages, goToPage}: PaginationProps) {
+  const handlePrevious = () => {
+    goToPage(currentPage - 1);
+  }
+
+  const handleNext = () => {
+    goToPage(currentPage + 1);
+  }
+  
   return (
     <Flex justify='center' mt='4'>
-      <Button>
+      <Button onClick={handlePrevious} disabled={currentPage === 1}>
         Previous
       </Button>
       <Box mx='2'>
         {`Page ${currentPage} of ${totalPages  }`}
       </Box>
-      <Button>
+      <Button onClick={handleNext} disabled={currentPage === totalPages}>
         Next
         </Button>
     </Flex>
