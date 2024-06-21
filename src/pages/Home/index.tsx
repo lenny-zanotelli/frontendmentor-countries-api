@@ -7,7 +7,7 @@ import SearchBar from '../../components/SearchBar/SearcBar';
 import Select from '../../components/Filter/Filter';
 import CardResults from '../../components/CardResults/CardResults';
 import Loader from '../../components/Loader/Loader';
-import { Flex } from '@radix-ui/themes';
+import { Button, Flex, Text } from '@radix-ui/themes';
 
 function Home() {
   const [textToSearch, setTextToSearch] = useState('');
@@ -59,6 +59,11 @@ function Home() {
         searchText={textToSearch}
         selectedRegion={selectedRegion}
       />
+      <>
+        <Button variant='ghost'>Previous</Button>
+        <Text as='span'> Page 1</Text>
+        <Button variant='ghost'>Next</Button>
+      </>
     </Layout>
   );
 }
