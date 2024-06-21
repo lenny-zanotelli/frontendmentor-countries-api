@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '../../pages/Home';
 import { ThemeContext } from '../../contexts/theme-context';
 import Detail from '../../pages/Detail';
-import Header from '../Header';
+import Header from '../Header/Header';
 
 function App() {
   // Detecting the default theme

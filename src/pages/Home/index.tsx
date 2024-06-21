@@ -2,11 +2,11 @@ import { useCallback, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Country } from '../../@types/countries';
 import getAllCountries from '../../hooks/getAllCountries';
-import Layout from '../../components/Layout';
-import SearchBar from '../../components/SearchBar';
-import Select from '../../components/Filter';
-import CardResults from '../../components/CardResults';
-import Loader from '../../components/Loader';
+import Layout from '../../components/Layout/Layout';
+import SearchBar from '../../components/SearchBar/SearcBar';
+import Select from '../../components/Filter/Filter';
+import CardResults from '../../components/CardResults/CardResults';
+import Loader from '../../components/Loader/Loader';
 import { Flex } from '@radix-ui/themes';
 
 function Home() {
@@ -24,12 +24,12 @@ function Home() {
 
   const handleSubmitSearch = useCallback((searchText: string) => {
     setTextToSearch(searchText);
-  } ,[]);
+  }, []);
 
   const handleSelectRegion = useCallback((region: string) => {
-    setSelectedRegion(region)
+    setSelectedRegion(region);
   }, []);
-  
+
   if (isLoading) {
     console.log('Loading...');
     return <Loader />;
@@ -39,7 +39,6 @@ function Home() {
     console.log('Error :', error);
     return <div>Error...</div>;
   }
-
 
   return (
     <Layout>

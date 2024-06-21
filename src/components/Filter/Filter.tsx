@@ -14,20 +14,22 @@ interface SelectBarProps {
   onSelectRegion: (region: string) => void;
 }
 
-function Select({ countries, onSelectRegion }: SelectBarProps) {
+function Filter({ countries, onSelectRegion }: SelectBarProps) {
   const [selectedOption, setSelectedOption] = useState('');
 
-  
-  const handleChange = useCallback((value: string) => {
-    const selectedRegion = value;
-    setSelectedOption(selectedRegion);
-    onSelectRegion(selectedRegion);
-  }, [onSelectRegion]);
-  
+  const handleChange = useCallback(
+    (value: string) => {
+      const selectedRegion = value;
+      setSelectedOption(selectedRegion);
+      onSelectRegion(selectedRegion);
+    },
+    [onSelectRegion]
+  );
+
   const regionsArray = useMemo(() => {
     const regionSet = new Set(countries.map((country) => country.region));
     return Array.from(regionSet).sort();
-  }, [countries])
+  }, [countries]);
   return (
     <SelectRoot onValueChange={handleChange} value={selectedOption} size="3">
       <SelectTrigger
@@ -51,4 +53,4 @@ function Select({ countries, onSelectRegion }: SelectBarProps) {
   );
 }
 
-export default Select;
+export default Filter;
