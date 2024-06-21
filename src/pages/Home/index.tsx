@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Country } from '../../@types/countries';
 import getAllCountries from '../../hooks/getAllCountries';
@@ -32,13 +32,13 @@ function Home() {
     return <div>Error...</div>;
   }
 
-  const handleSubmitSearch = (searchText: string) => {
+  const handleSubmitSearch = useCallback((searchText: string) => {
     setTextToSearch(searchText);
-  };
+  } ,[]);
 
-  const handleSelectRegion = (region: string) => {
-    setSelectedRegion(region);
-  };
+  const handleSelectRegion = useCallback((region: string) => {
+    setSelectedRegion(region)
+  }, []);
 
   return (
     <Layout>
