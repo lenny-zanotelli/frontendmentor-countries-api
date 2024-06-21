@@ -9,13 +9,14 @@ function App() {
   // Detecting the default theme
   const isBrowserDefaultDark = () =>
     window.matchMedia('(prefers-color-scheme: dark)').matches;
+
   const getDefautlTheme = (): string => {
     const localStorageTheme = localStorage.getItem('default-theme');
     const browserDefault = isBrowserDefaultDark() ? 'dark' : 'light';
     return localStorageTheme || browserDefault;
   };
 
-  const [theme, setTheme] = useState(getDefautlTheme);
+  const [theme, setTheme] = useState<string>(getDefautlTheme());
 
   useEffect(() => {
     document.body.className = `${theme}`;
