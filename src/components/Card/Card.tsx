@@ -24,6 +24,7 @@ function CardComponent({ country }: CountryProps) {
           <Inset pb="current">
             <AspectRatio ratio={2}>
               <img
+                loading='lazy'
                 src={country.flags.svg}
                 alt={country.name.common}
                 style={{
