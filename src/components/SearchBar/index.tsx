@@ -1,7 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useCallback, useState } from 'react';
 import { TextFieldInput, TextFieldRoot, TextFieldSlot } from '@radix-ui/themes';
+import React from 'react';
 
 interface SearchBarProps {
   onSubmitSearch: (searchText: string) => void;
@@ -10,11 +10,14 @@ interface SearchBarProps {
 function SearchBar({ onSubmitSearch }: SearchBarProps) {
   const [query, setQuery] = useState('');
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const searchText = event.target.value;
-    setQuery(searchText);
-    onSubmitSearch(searchText);
-  };
+  const handleChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const searchText = event.target.value;
+      setQuery(searchText);
+      onSubmitSearch(searchText);
+    },
+    [onSubmitSearch]
+  );
 
   return (
     <TextFieldRoot variant="classic" size="3" color="gray">
@@ -33,4 +36,4 @@ function SearchBar({ onSubmitSearch }: SearchBarProps) {
   );
 }
 
-export default SearchBar;
+export default React.memo(SearchBar);
