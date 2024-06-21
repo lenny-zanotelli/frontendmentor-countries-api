@@ -9,6 +9,7 @@ import CardResults from '../../components/CardResults/CardResults';
 import Loader from '../../components/Loader/Loader';
 import { Button, Flex, Text } from '@radix-ui/themes';
 import Pagination from '../../components/Pagination/Pagination';
+import usePagination from '../../hooks/usePagination';
 
 function Home() {
   const [textToSearch, setTextToSearch] = useState('');
@@ -30,6 +31,10 @@ function Home() {
   const handleSelectRegion = useCallback((region: string) => {
     setSelectedRegion(region);
   }, []);
+
+  const { currentPage, startIndex, endIndex, pageSize, totalPages, goToPage } = usePagination(allCountries?.length);
+
+  const paginatedCountries = allCountries ? allCountries?.slice(startIndex, endIndex + 1) : [];
 
   if (isLoading) {
     console.log('Loading...');
@@ -56,13 +61,15 @@ function Home() {
         <Select countries={allCountries} onSelectRegion={handleSelectRegion} />
       </Flex>
       <CardResults
-        countries={allCountries}
+        countries={paginatedCountries}
         searchText={textToSearch}
         selectedRegion={selectedRegion}
       />
-      <Pagination currentPage={0} totalPages={0} goToPage={function (pageNumber: number): void {
-        throw new Error('Function not implemented.');
-      } } />
+      <Pagination 
+        currentPage={currentPage} 
+        totalPages={totalPages} 
+        goToPage={goToPage} 
+      />
     </Layout>
   );
 }
