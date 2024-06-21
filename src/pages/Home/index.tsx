@@ -8,6 +8,7 @@ import Select from '../../components/Filter/Filter';
 import CardResults from '../../components/CardResults/CardResults';
 import Loader from '../../components/Loader/Loader';
 import { Button, Flex, Text } from '@radix-ui/themes';
+import Pagination from '../../components/Pagination/Pagination';
 
 function Home() {
   const [textToSearch, setTextToSearch] = useState('');
@@ -59,11 +60,9 @@ function Home() {
         searchText={textToSearch}
         selectedRegion={selectedRegion}
       />
-      <>
-        <Button variant='ghost'>Previous</Button>
-        <Text as='span'> Page 1</Text>
-        <Button variant='ghost'>Next</Button>
-      </>
+      <Pagination currentPage={0} totalPages={0} goToPage={function (pageNumber: number): void {
+        throw new Error('Function not implemented.');
+      } } />
     </Layout>
   );
 }
