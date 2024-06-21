@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Country } from '../../@types/countries';
 import {
   SelectContent,
@@ -17,16 +17,17 @@ interface SelectBarProps {
 function Select({ countries, onSelectRegion }: SelectBarProps) {
   const [selectedOption, setSelectedOption] = useState('');
 
-  // Make a set of unique regions...
-  const regionSet = new Set(countries.map((country) => country.region));
-  // ...and a sorted Array from the set
-  const regionsArray = Array.from(regionSet).sort();
-
-  const handleChange = (value: string) => {
+  
+  const handleChange = useCallback((value: string) => {
     const selectedRegion = value;
     setSelectedOption(selectedRegion);
     onSelectRegion(selectedRegion);
-  };
+  }, [onSelectRegion]);
+  
+  const regionsArray = useMemo(() => {
+    const regionSet = new Set(countries.map((country) => country.region));
+    return Array.from(regionSet).sort();
+  }, [countries])
   return (
     <SelectRoot onValueChange={handleChange} value={selectedOption} size="3">
       <SelectTrigger
