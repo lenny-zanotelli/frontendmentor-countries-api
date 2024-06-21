@@ -51,10 +51,10 @@ function ContentDetail() {
         maxWidth: 1500
       }}
     >
-      <Box width="auto" height="auto">
+      <Box width="100%" height="auto" style={{ maxWidth: 600 }}>
         <AspectRatio ratio={16 / 9}>
           <img
-            src={country.flags.svg}
+            src={country.flags.png}
             alt={country.name.common}
             style={{
               objectFit: 'cover',
@@ -65,17 +65,17 @@ function ContentDetail() {
         </AspectRatio>
       </Box>
 
-      <Flex direction="column">
+      <Flex direction="column" width="100%">
         <Box width="100%" height="max-content" mb="6">
           <Heading as="h1" size="8">
             {country.name.common}
           </Heading>
         </Box>
 
-        <Flex direction={{ initial: 'column', sm: 'row' }}>
+        <Flex direction={{ initial: 'column', sm: 'row' }} gap="6">
           <GeneralInfo country={country} />
 
-          <Flex direction="column" align="start" width="100%" gap="3">
+          <Flex direction="column" align="start" gap="3">
             <TopLevelDomain country={country} />
             <Currencies country={country} />
             <Languages country={country} />

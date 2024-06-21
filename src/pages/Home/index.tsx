@@ -32,19 +32,23 @@ function Home() {
     setSelectedRegion(region);
   }, []);
 
-  const { currentPage, startIndex, endIndex, pageSize, totalPages, goToPage } = usePagination(allCountries?.length);
+  const { currentPage, startIndex, endIndex, pageSize, totalPages, goToPage } =
+    usePagination(allCountries?.length);
 
   const filteredCountries = allCountries
-    ? allCountries.filter(country =>
+    ? allCountries.filter((country) =>
         country.name.common.toLowerCase().includes(textToSearch.toLowerCase())
       )
     : [];
 
   const regionFilteredCountries = selectedRegion
-    ? filteredCountries.filter(country => country.region === selectedRegion)
+    ? filteredCountries.filter((country) => country.region === selectedRegion)
     : filteredCountries;
-      
-  const paginatedCountries = regionFilteredCountries.slice(startIndex, endIndex + 1);
+
+  const paginatedCountries = regionFilteredCountries.slice(
+    startIndex,
+    endIndex + 1
+  );
 
   if (isLoading) {
     console.log('Loading...');
@@ -75,10 +79,10 @@ function Home() {
         searchText={textToSearch}
         selectedRegion={selectedRegion}
       />
-      <Pagination 
-        currentPage={currentPage} 
-        totalPages={totalPages} 
-        goToPage={goToPage} 
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        goToPage={goToPage}
       />
     </Layout>
   );
