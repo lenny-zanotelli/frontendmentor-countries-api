@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [My Solution](https://frontendmentor-countries-api-sage.vercel.app/)
+- Solution URL: [My Solution](https://frontendmentor-countries-api-wine.vercel.app/)
 
 ## My process
 
@@ -46,10 +46,11 @@ Users should be able to:
 ### Continued development
 
 Fix the spinner position when loading,
+~~Add a pagination feature for better performance~~
 
 ### Useful resources
 
-- [Implenting Darko Mode with React Context and Sass Mixin](https://betterprogramming.pub/a-complete-guide-to-implementing-dark-mode-in-react-47af893b22eb)
+- [Implenting Dark Mode with React Context and Sass Mixin](https://betterprogramming.pub/a-complete-guide-to-implementing-dark-mode-in-react-47af893b22eb)
 
 ## Author
 
