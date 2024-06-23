@@ -7,6 +7,8 @@ interface PaginationProps {
 }
 
 function Pagination({ currentPage, totalPages, goToPage }: PaginationProps) {
+  if (totalPages === 0) return null;
+
   const handlePrevious = () => {
     goToPage(currentPage - 1);
   };
@@ -16,7 +18,7 @@ function Pagination({ currentPage, totalPages, goToPage }: PaginationProps) {
   };
 
   return (
-    <Flex justify="center" mt="4">
+    <Flex justify="center" m="4">
       <Button onClick={handlePrevious} disabled={currentPage === 1}>
         Previous
       </Button>

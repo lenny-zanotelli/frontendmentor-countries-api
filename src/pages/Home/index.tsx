@@ -7,7 +7,7 @@ import SearchBar from '../../components/SearchBar/SearcBar';
 import Select from '../../components/Filter/Filter';
 import CardResults from '../../components/CardResults/CardResults';
 import Loader from '../../components/Loader/Loader';
-import { Button, Flex, Text } from '@radix-ui/themes';
+import { Flex } from '@radix-ui/themes';
 import Pagination from '../../components/Pagination/Pagination';
 import usePagination from '../../hooks/usePagination';
 
@@ -32,9 +32,6 @@ function Home() {
     setSelectedRegion(region);
   }, []);
 
-  const { currentPage, startIndex, endIndex, pageSize, totalPages, goToPage } =
-    usePagination(allCountries?.length);
-
   const filteredCountries = allCountries
     ? allCountries.filter((country) =>
         country.name.common.toLowerCase().includes(textToSearch.toLowerCase())
@@ -44,6 +41,9 @@ function Home() {
   const regionFilteredCountries = selectedRegion
     ? filteredCountries.filter((country) => country.region === selectedRegion)
     : filteredCountries;
+
+  const { currentPage, startIndex, endIndex, totalPages, goToPage } =
+    usePagination(regionFilteredCountries?.length);
 
   const paginatedCountries = regionFilteredCountries.slice(
     startIndex,
