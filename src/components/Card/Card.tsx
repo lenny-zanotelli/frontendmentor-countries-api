@@ -18,13 +18,12 @@ interface CountryProps {
 function CardComponent({ country }: CountryProps) {
   const populationFormat = formatNumber(country.population);
   return (
-    <Card asChild size="3" variant="classic" style={{ maxWidth: 300 }}>
+    <Card asChild size="3" variant="classic" style={{ width: 300, height: 350 }}>
       <Link to={`/country/${country.cca3}`}>
         <Flex gap="5" direction="column">
           <Inset pb="current">
-            <AspectRatio ratio={2}>
+            <AspectRatio ratio={16 / 9}>
               <img
-                loading="lazy"
                 src={country.flags.png}
                 alt={country.name.common}
                 style={{
@@ -35,7 +34,7 @@ function CardComponent({ country }: CountryProps) {
               />
             </AspectRatio>
           </Inset>
-          <Flex direction="column" width="100%">
+          <Flex direction="column" width="100%" justify='between'>
             <Heading as="h2" mb="4" weight="bold">
               {country.name.common}
             </Heading>
@@ -46,7 +45,6 @@ function CardComponent({ country }: CountryProps) {
               <Strong>Region: </Strong> {country.region}
             </Text>
             <Text as="p">
-              {/* TODO: Can i do a better readable code than a nested ternary for join multiple capitals here ? */}
               <Strong>Capital: </Strong>
               {country.capital
                 ? country.capital.length >= 2
