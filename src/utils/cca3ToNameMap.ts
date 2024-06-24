@@ -248,5 +248,5 @@ export const cca3ToNameMap: { [key: string]: string } = {
   ESH: 'Western Sahara',
   YEM: 'Yemen',
   ZMB: 'Zambia',
-  ZWE: 'Zimbabwe'
+  ZWE: 'Zimbabwe',
 };

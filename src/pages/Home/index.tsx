@@ -19,9 +19,9 @@ function Home() {
     isError,
     isLoading,
     data: allCountries,
-    error
+    error,
   } = useQuery<Country[]>(['countries'], getAllCountries, {
-    staleTime: 5 * 60 * 1000
+    staleTime: 5 * 60 * 1000,
   });
 
   const handleSubmitSearch = useCallback((searchText: string) => {

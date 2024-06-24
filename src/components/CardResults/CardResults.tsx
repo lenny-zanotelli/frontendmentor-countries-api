@@ -11,7 +11,7 @@ interface CardResultsProps {
 function CardResults({
   countries,
   searchText,
-  selectedRegion
+  selectedRegion,
 }: CardResultsProps) {
   const filteredCountries = countries.filter(
     (country) =>

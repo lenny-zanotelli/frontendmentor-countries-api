@@ -6,7 +6,7 @@ import {
   SelectItem,
   SelectLabel,
   SelectRoot,
-  SelectTrigger
+  SelectTrigger,
 } from '@radix-ui/themes';
 
 interface SelectBarProps {

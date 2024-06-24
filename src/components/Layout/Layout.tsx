@@ -11,7 +11,7 @@ function Layout({ children }: Layoutrops) {
       justify="center"
       align="center"
       style={{
-        margin: '0.76rem, 0.76rem'
+        margin: '0.76rem, 0.76rem',
       }}
     >
       {children}

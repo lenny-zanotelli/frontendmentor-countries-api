@@ -6,7 +6,7 @@ const override: CSSProperties = {
   position: 'fixed',
   zIndex: '1',
   top: '50%',
-  left: '40%'
+  left: '40%',
 };
 
 function Loader() {

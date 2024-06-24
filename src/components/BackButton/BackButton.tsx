@@ -9,7 +9,7 @@ function BackButton() {
       variant="surface"
       color="gray"
       style={{
-        margin: '4.5rem auto auto 0'
+        margin: '4.5rem auto auto 0',
       }}
     >
       <Link to="/">
@@ -21,7 +21,7 @@ function BackButton() {
           color="gray"
           align="center"
           style={{
-            paddingLeft: '0.5rem'
+            paddingLeft: '0.5rem',
           }}
         >
           Back

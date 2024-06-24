@@ -29,7 +29,7 @@ const usePagination = (
     endIndex,
     pageSize,
     totalPages,
-    goToPage
+    goToPage,
   };
 };
 

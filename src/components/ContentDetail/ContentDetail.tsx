@@ -18,7 +18,7 @@ function ContentDetail() {
     isError,
     isLoading,
     data: country,
-    error
+    error,
   } = useQuery<Country>(
     ['country', cca3],
     () => getOneCountry(cca3 as string),
@@ -48,7 +48,7 @@ function ContentDetail() {
       gap="6"
       justify="center"
       style={{
-        maxWidth: 1500
+        maxWidth: 1500,
       }}
     >
       <Box width="100%" height="auto" style={{ maxWidth: 600 }}>
@@ -59,7 +59,7 @@ function ContentDetail() {
             style={{
               objectFit: 'cover',
               width: '100%',
-              height: '100%'
+              height: '100%',
             }}
           />
         </AspectRatio>

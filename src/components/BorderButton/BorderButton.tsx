@@ -11,7 +11,7 @@ function BorderButton({ country }: ContentDetailProps) {
       wrap={{ initial: 'wrap', xl: 'nowrap' }}
       mb={{ initial: '9', md: '2' }}
       style={{
-        maxWidth: 280
+        maxWidth: 280,
       }}
     >
       {country.borders ? (
