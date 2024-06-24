@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { StrictMode } from 'react';
 import { Theme } from '@radix-ui/themes';
 import App from './components/App';
 import './styles/index.scss';
@@ -17,7 +16,6 @@ const queryClient = new QueryClient({
 });
 
 root.render(
-  <StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Theme
@@ -32,5 +30,4 @@ root.render(
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
-  </StrictMode>
 );
