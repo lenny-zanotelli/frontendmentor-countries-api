@@ -7,7 +7,7 @@ import {
   Heading,
   Inset,
   Strong,
-  Text,
+  Text
 } from '@radix-ui/themes';
 import formatNumber from '../../utils/formatPopNumber';
 
@@ -18,29 +18,23 @@ interface CountryProps {
 function CardComponent({ country }: CountryProps) {
   const populationFormat = formatNumber(country.population);
   return (
-    <Card
-      asChild
-      size="3"
-      variant="classic"
-      style={{ width: 300, height: 350 }}
-    >
+    <Card asChild size="3" variant="classic" style={{ width: 300, height: 350 }}>
       <Link to={`/country/${country.cca3}`}>
         <Flex gap="5" direction="column">
           <Inset pb="current">
             <AspectRatio ratio={16 / 9}>
               <img
-                fetchPriority='high'
                 src={country.flags.png}
                 alt={country.name.common}
                 style={{
                   objectFit: 'cover',
                   width: '100%',
-                  height: '100%',
+                  height: '100%'
                 }}
               />
             </AspectRatio>
           </Inset>
-          <Flex direction="column" width="100%" justify="between">
+          <Flex direction="column" width="100%" justify='between'>
             <Heading as="h2" mb="4" weight="bold">
               {country.name.common}
             </Heading>
