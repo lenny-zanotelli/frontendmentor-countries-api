@@ -32,11 +32,9 @@ function CardResults({
       gapX="7"
       gapY="5"
     >
-      <Suspense fallback={<Loader />}>
-        {filteredCountries.map((country) => (
-          <Card key={country.name.official} country={country} />
-        ))}
-      </Suspense>
+      {filteredCountries.map((country) => (
+        <Card key={country.name.official} country={country} />
+      ))}
     </Grid>
   );
 }
