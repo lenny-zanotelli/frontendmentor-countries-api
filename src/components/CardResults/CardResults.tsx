@@ -1,6 +1,8 @@
 import Card from '../Card/Card';
 import { Country } from '../../@types/countries';
 import { Grid } from '@radix-ui/themes';
+import { Suspense } from 'react';
+import Loader from '../Loader/Loader';
 
 interface CardResultsProps {
   countries: Country[];
@@ -30,9 +32,11 @@ function CardResults({
       gapX="7"
       gapY="5"
     >
-      {filteredCountries.map((country) => (
-        <Card key={country.name.official} country={country} />
-      ))}
+      <Suspense fallback={<Loader />}>
+        {filteredCountries.map((country) => (
+          <Card key={country.name.official} country={country} />
+        ))}
+      </Suspense>
     </Grid>
   );
 }
