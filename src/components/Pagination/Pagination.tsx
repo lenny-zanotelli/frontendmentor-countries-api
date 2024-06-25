@@ -19,11 +19,23 @@ function Pagination({ currentPage, totalPages, goToPage }: PaginationProps) {
 
   return (
     <Flex justify="center" m="4">
-      <Button onClick={handlePrevious} disabled={currentPage === 1}>
+      <Button
+        size="2"
+        variant="surface"
+        color="gray"
+        onClick={handlePrevious}
+        disabled={currentPage === 1}
+      >
         Previous
       </Button>
       <Box mx="2">{`Page ${currentPage} of ${totalPages}`}</Box>
-      <Button onClick={handleNext} disabled={currentPage === totalPages}>
+      <Button
+        size="2"
+        variant="surface"
+        color="gray"
+        onClick={handleNext}
+        disabled={currentPage === totalPages}
+      >
         Next
       </Button>
     </Flex>

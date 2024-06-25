@@ -16,18 +16,18 @@ const queryClient = new QueryClient({
 });
 
 root.render(
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Theme
-          accentColor="gray"
-          grayColor="gray"
-          panelBackground="solid"
-          scaling="100%"
-          radius="none"
-        >
-          <App />
-        </Theme>
-      </BrowserRouter>
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <Theme
+        accentColor="gray"
+        grayColor="gray"
+        panelBackground="solid"
+        scaling="100%"
+        radius="none"
+      >
+        <App />
+      </Theme>
+    </BrowserRouter>
+    <ReactQueryDevtools initialIsOpen={false} />
+  </QueryClientProvider>
 );

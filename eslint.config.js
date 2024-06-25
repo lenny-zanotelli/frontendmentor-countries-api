@@ -2,6 +2,7 @@ import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js';
+import jsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default [
@@ -11,5 +12,6 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReactConfig,
+  jsxRuntime,
   eslintPluginPrettierRecommended,
 ];
