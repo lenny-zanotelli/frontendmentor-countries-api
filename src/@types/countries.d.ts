@@ -34,7 +34,7 @@ export interface Flags {
 }
 
 export interface Name {
-  [x: string]: any;
+  [x: string]: string;
   common: string;
   official: string;
   nativeName: { [key: string]: Translation };
