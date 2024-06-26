@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Theme } from '@radix-ui/themes';
-import App from './components/App';
+import App from './components/App/App';
 import './styles/index.scss';
 import '@radix-ui/themes/styles.css';
 

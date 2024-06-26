@@ -1,8 +1,6 @@
 import Card from '../Card/Card';
 import { Country } from '../../@types/countries';
 import { Grid } from '@radix-ui/themes';
-import { Suspense } from 'react';
-import Loader from '../Loader/Loader';
 
 interface CardResultsProps {
   countries: Country[];

@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Country } from '../../@types/countries';
 import getAllCountries from '../../hooks/getAllCountries';
 import Layout from '../../components/Layout/Layout';
-import SearchBar from '../../components/SearchBar/SearcBar';
+import SearchBar from '../../components/SearchBar/SearchBar';
 import Select from '../../components/Filter/Filter';
 import CardResults from '../../components/CardResults/CardResults';
 import Loader from '../../components/Loader/Loader';
