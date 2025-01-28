@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Country } from '../@types/countries';
 import { BaseError } from '../api/errors';
 import { CountryAPi } from '../api/countryApi';
@@ -23,16 +23,24 @@ export const useFetchCountry = (initialCca3?: string) => {
       const country = await CountryAPi.fetchByCode(cca3);
       setState({ data: country, error: null, isLoading: false });
     } catch (error) {
+      const handledError =
+        error instanceof BaseError
+          ? error
+          : new BaseError('Unknown error', 'UNKNOWN');
       setState({
         data: null,
-        error:
-          error instanceof BaseError
-            ? error
-            : new BaseError('Unknown error', 'UNKNOWN'),
+        error: handledError,
         isLoading: false,
       });
     }
   }, []);
+
+  useEffect(() => {
+    if (initialCca3) {
+      fetchCountry(initialCca3);
+    }
+  }, [initialCca3, fetchCountry]);
+
   return {
     ...state,
     fetchCountry,
