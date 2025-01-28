@@ -1,10 +1,9 @@
-import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { AspectRatio, Box, Flex, Grid, Heading } from '@radix-ui/themes';
 import { Country } from '../../@types/countries';
 import Loader from '../Loader/Loader';
-import getOneCountry from '../../hooks/getOneCountry';
+import getOneCountry from '../../api/countryApi';
 import GeneralInfo from '../GeneralInfo/GeneralInfo';
 import TopLevelDomain from '../TopLevelDomain/TopLevelDomain';
 import Currencies from '../Currencies/Currencies';
@@ -13,17 +12,6 @@ import BorderButton from '../BorderButton/BorderButton';
 
 function ContentDetail() {
   const { cca3 } = useParams();
-
-  const {
-    isError,
-    isLoading,
-    data: country,
-    error,
-  } = useQuery<Country>(
-    ['country', cca3],
-    () => getOneCountry(cca3 as string),
-    { staleTime: 5 * 60 * 1000 }
-  );
 
   useEffect(() => {
     getOneCountry(cca3 as string);

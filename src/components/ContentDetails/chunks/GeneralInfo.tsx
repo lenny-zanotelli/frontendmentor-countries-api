@@ -1,5 +1,5 @@
 import { Flex, Text } from '@radix-ui/themes';
-import { Country } from '../../@types/countries';
+import { Country } from '../../../@types/countries';
 
 interface Props {
   country: Country;

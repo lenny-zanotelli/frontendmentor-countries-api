@@ -1,5 +1,5 @@
 import { Flex, Heading } from '@radix-ui/themes';
-import ToggleButton from '../ToggleButton/ToggleButton';
+import ToggleButton from '../../ui/ToggleButton';
 
 function Header() {
   return (
