@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Country } from '../../../@types/countries';
 import {
   AspectRatio,
   Card,
@@ -9,7 +8,8 @@ import {
   Strong,
   Text,
 } from '@radix-ui/themes';
-import formatNumber from '../../../utils/formatPopNumber';
+import { Country } from '../../@types/countries';
+import formatNumber from '../../utils/formatPopNumber';
 
 interface CountryProps {
   country: Country;

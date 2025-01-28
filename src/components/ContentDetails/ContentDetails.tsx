@@ -1,35 +1,32 @@
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { AspectRatio, Box, Flex, Grid, Heading } from '@radix-ui/themes';
-import { Country } from '../../@types/countries';
-import Loader from '../Loader/Loader';
-import getOneCountry from '../../api/countryApi';
-import GeneralInfo from '../GeneralInfo/GeneralInfo';
-import TopLevelDomain from '../TopLevelDomain/TopLevelDomain';
-import Currencies from '../Currencies/Currencies';
-import Languages from '../Languages/Languages';
-import BorderButton from '../BorderButton/BorderButton';
+import Loader from '../ui/Loader';
+import GeneralInfo from './chunks/GeneralInfo';
+import TopLevelDomain from './chunks/TopLevelDomain';
+import Currencies from './chunks/Currencies';
+import Languages from './chunks/Languages';
+import { useFetchCountry } from '../../hooks/useFetchCountry';
+import BorderButton from '../ui/BorderButton';
 
-function ContentDetail() {
+function ContentDetails() {
   const { cca3 } = useParams();
+  const { error, data: country, isLoading, fetchCountry } = useFetchCountry();
 
   useEffect(() => {
-    getOneCountry(cca3 as string);
-  });
+    if (cca3) {
+      fetchCountry(cca3);
+    }
+  }, [cca3, fetchCountry]);
 
   if (isLoading) {
-    console.log('Loading...');
     return <Loader />;
   }
 
-  if (isError) {
-    console.log('Error :', error);
-    return <div>Error...</div>;
+  if (error) {
+    return <div>error: {error.message}</div>;
   }
-
-  if (!country) {
-    return <div>Country not found</div>;
-  }
+  if (!country) return;
   return (
     <Grid
       columns={{ initial: '1', md: '2' }}
@@ -88,4 +85,4 @@ function ContentDetail() {
   );
 }
 
-export default ContentDetail;
+export default ContentDetails;
