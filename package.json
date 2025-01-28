@@ -10,7 +10,17 @@
     "prettier": "prettier --write .",
     "lint": "eslint ."
   },
-  "engines": {
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "onFail": "error"
+    },
+    "packageManager": {
+      "name": "npm",
+      "onFail": "error"
+    }
+  },
+  "engines": { 
     "node": ">=20.x",
     "npm": ">=8.x"
   },
