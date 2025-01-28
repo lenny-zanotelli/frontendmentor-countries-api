@@ -1,16 +1,9 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Country } from '../../@types/countries';
-import {
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectRoot,
-  SelectTrigger,
-} from '@radix-ui/themes';
+import { Select } from '@radix-ui/themes';
 
 interface SelectBarProps {
-  countries: Country[];
+  countries: Country[] | null;
   onSelectRegion: (region: string) => void;
 }
 
@@ -27,29 +20,29 @@ function Filter({ countries, onSelectRegion }: SelectBarProps) {
   );
 
   const regionsArray = useMemo(() => {
-    const regionSet = new Set(countries.map((country) => country.region));
+    const regionSet = new Set(countries?.map((country) => country.region));
     return Array.from(regionSet).sort();
   }, [countries]);
   return (
-    <SelectRoot onValueChange={handleChange} value={selectedOption} size="3">
-      <SelectTrigger
+    <Select.Root onValueChange={handleChange} value={selectedOption} size="3">
+      <Select.Trigger
         variant="classic"
         placeholder="Filter by Region"
         aria-label="Filter by Region"
       />
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel aria-labelledby="Aria Filter by Region">
+      <Select.Content>
+        <Select.Group>
+          <Select.Label aria-labelledby="Aria Filter by Region">
             Filter by Region
-          </SelectLabel>
+          </Select.Label>
           {regionsArray.map((region) => (
-            <SelectItem key={region} value={region}>
+            <Select.Item key={region} value={region}>
               {region}
-            </SelectItem>
+            </Select.Item>
           ))}
-        </SelectGroup>
-      </SelectContent>
-    </SelectRoot>
+        </Select.Group>
+      </Select.Content>
+    </Select.Root>
   );
 }
 

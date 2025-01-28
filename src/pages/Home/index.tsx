@@ -1,11 +1,11 @@
 import { useCallback, useState } from 'react';
 import Layout from '../../components/Layout/Layout';
-import SearchBar from '../../components/SearchBar/SearchBar';
-import Select from '../../components/Filter/Filter';
-import CardResults from '../../components/CardResults/CardResults';
-import Loader from '../../components/Loader/Loader';
+import SearchBar from '../../components/ui/SearchBar';
+import Select from '../../components/ui/Filter';
+import CardResults from '../../components/ui/CardResults';
+import Loader from '../../components/ui/Loader';
 import { Flex } from '@radix-ui/themes';
-import Pagination from '../../components/Pagination/Pagination';
+import Pagination from '../../components/Pagination';
 import usePagination from '../../hooks/usePagination';
 import { useFetchAllCountries } from '../../hooks/useFetchAllCountries';
 

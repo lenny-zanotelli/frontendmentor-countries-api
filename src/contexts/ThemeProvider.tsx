@@ -11,7 +11,6 @@ interface ThemeProviderProps {
 export const ThemeContext = createContext<ThemeContext>({} as ThemeContext);
 
 export default function ThemeProvider({ children }: ThemeProviderProps) {
-  // Detecting the default theme
   const isBrowserDefaultDark = () =>
     window.matchMedia('(prefers-color-scheme: dark)').matches;
 

@@ -1,9 +1,9 @@
 import { Flex } from '@radix-ui/themes';
 import Layout from '../../components/Layout/Layout';
-import BackButton from '../../components/BackButton/BackButton';
-import ContentDetail from '../../components/ContentDetail/ContentDetail';
+import BackButton from '../../components/ui/BackButton';
+import ContentDetail from '../../components/ContentDetails/ContentDetails';
 
-function Detail() {
+function Details() {
   return (
     <Layout>
       <Flex direction="column" width="max-content" gap="9" mt="-5">
@@ -14,4 +14,4 @@ function Detail() {
   );
 }
 
-export default Detail;
+export default Details;
