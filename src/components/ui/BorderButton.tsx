@@ -1,9 +1,9 @@
 import { Button, Flex, Text } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
-import { ContentDetailProps } from '../../@types/ContentDetailsProps';
+import { ContentDetailsProps } from '../../@types/ContentDetailsProps';
 import { cca3ToNameMap } from '../../utils/cca3ToNameMap';
 
-function BorderButton({ country }: ContentDetailProps) {
+function BorderButton({ country }: ContentDetailsProps) {
   return (
     <Flex
       gap="2"

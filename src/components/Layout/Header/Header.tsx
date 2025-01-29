@@ -13,7 +13,7 @@ function Header() {
       }}
     >
       <Heading as="h1" weight="bold" size={{ initial: '4', sm: '6' }}>
-        Where in the world ?
+        <a href="/">Where in the world ?</a>
       </Heading>
       <ToggleButton />
     </Flex>
