@@ -19,7 +19,11 @@ export class CountryApi {
   }
   static async getAllCountries(): Promise<Country[]> {
     try {
-      const response: Response = await fetch(`${BASE_URL}/all`);
+      const response: Response = await fetch(`${BASE_URL}/all`, {
+        headers: {
+          'Cache-Control': 'public, max-age=86400, immutable',
+        },
+      });
       const countries: Country[] =
         await this.handleResponse<Country[]>(response);
       if (!countries) {
@@ -39,7 +43,12 @@ export class CountryApi {
     try {
       const sanitizedCCA3 = cca3.toUpperCase().trim();
       const response: Response = await fetch(
-        `${BASE_URL}/alpha/${sanitizedCCA3}`
+        `${BASE_URL}/alpha/${sanitizedCCA3}`,
+        {
+          headers: {
+            'Cache-Control': 'public, max-age=86400, immutable',
+          },
+        }
       );
       const data = await this.handleResponse<Country[]>(response);
 
