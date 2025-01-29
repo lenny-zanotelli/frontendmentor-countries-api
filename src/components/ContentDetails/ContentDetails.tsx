@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { AspectRatio, Box, Flex, Grid, Heading } from '@radix-ui/themes';
+import { Box, Flex, Grid, Heading } from '@radix-ui/themes';
 import Loader from '../ui/Loader';
 import GeneralInfo from './chunks/GeneralInfo';
 import TopLevelDomain from './chunks/TopLevelDomain';
@@ -33,25 +33,21 @@ function ContentDetails() {
       gap="6"
       justify="center"
       style={{
-        maxWidth: 1500,
+        maxWidth: 1000,
       }}
     >
-      <Box width="100%" height="auto" style={{ maxWidth: 600 }}>
-        <AspectRatio ratio={16 / 9}>
-          <img
-            src={country.flags.png}
-            alt={country.name.common}
-            style={{
-              objectFit: 'cover',
-              width: '100%',
-              height: '100%',
-            }}
-          />
-        </AspectRatio>
+      <Box pb="6">
+        <img
+          src={country.flags.png}
+          alt={country.flags.alt}
+          style={{
+            objectFit: 'cover',
+          }}
+        />
       </Box>
 
-      <Flex direction="column" width="100%">
-        <Box width="100%" height="max-content" mb="6">
+      <Flex direction="column">
+        <Box height="max-content" mb="6">
           <Heading as="h1" size="8">
             {country.name.common}
           </Heading>
