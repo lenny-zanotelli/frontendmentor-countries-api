@@ -1,7 +1,7 @@
 import { Text } from '@radix-ui/themes';
-import { ContentDetailProps } from '../../../@types/ContentDetailsProps';
+import { ContentDetailsProps } from '../../../@types/ContentDetailsProps';
 
-function Currencies({ country }: ContentDetailProps) {
+function Currencies({ country }: ContentDetailsProps) {
   return (
     <Text as="p" weight="bold">
       Currencies:

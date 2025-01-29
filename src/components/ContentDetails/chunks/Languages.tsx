@@ -1,7 +1,7 @@
 import { Text } from '@radix-ui/themes';
-import { ContentDetailProps } from '../../../@types/ContentDetailsProps';
+import { ContentDetailsProps } from '../../../@types/ContentDetailsProps';
 
-function Languages({ country }: ContentDetailProps) {
+function Languages({ country }: ContentDetailsProps) {
   return (
     <Text as="p" weight="bold">
       Languages:

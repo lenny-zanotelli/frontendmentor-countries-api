@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Country } from '../@types/countries';
 import { BaseError } from '../api/errors';
-import { CountryAPi } from '../api/countryApi';
+import { CountryApi } from '../api/countryApi';
 
 interface CountriesState {
   data: Country[] | null;
@@ -20,7 +20,7 @@ export const useFetchAllCountries = () => {
     setState((prevState) => ({ ...prevState, isLoading: true, error: null }));
 
     try {
-      const countries = await CountryAPi.getAllCountries();
+      const countries = await CountryApi.getAllCountries();
       setState({ data: countries, error: null, isLoading: false });
     } catch (error) {
       setState({
@@ -41,5 +41,5 @@ export const useFetchAllCountries = () => {
       abortController.abort();
     };
   }, []);
-  return { state };
+  return { ...state, fetchCountries };
 };

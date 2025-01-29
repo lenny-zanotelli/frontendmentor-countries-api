@@ -12,7 +12,7 @@ import { useFetchAllCountries } from '../../hooks/useFetchAllCountries';
 function Home() {
   const [textToSearch, setTextToSearch] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
-  const { state } = useFetchAllCountries();
+  const { data, isLoading } = useFetchAllCountries();
 
   const handleSubmitSearch = useCallback((searchText: string) => {
     setTextToSearch(searchText);
@@ -22,7 +22,7 @@ function Home() {
     setSelectedRegion(region);
   }, []);
 
-  const countries = state ? state.data : [];
+  const countries = data ? data : [];
 
   const filteredCountries = countries
     ? countries.filter((country) =>
@@ -42,35 +42,34 @@ function Home() {
     endIndex + 1
   );
 
-  if (state.isLoading) {
-    console.log('Loading...');
-    return <Loader />;
-  }
-
   return (
     <Layout>
-      <Flex
-        justify="between"
-        align={{ initial: 'start', sm: 'center' }}
-        gap={{ initial: '5', sm: '9' }}
-        my="9"
-        mx="4"
-        width="max-content"
-        direction={{ initial: 'column', sm: 'row' }}
-      >
-        <SearchBar onSubmitSearch={handleSubmitSearch} />
-        <Select countries={countries} onSelectRegion={handleSelectRegion} />
-      </Flex>
-      <CardResults
-        countries={paginatedCountries}
-        searchText={textToSearch}
-        selectedRegion={selectedRegion}
-      />
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        goToPage={goToPage}
-      />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <Flex
+            justify="between"
+            align={{ initial: 'start', sm: 'center' }}
+            gap={{ initial: '5', sm: '9' }}
+            my="9"
+            direction={{ initial: 'column', sm: 'row' }}
+          >
+            <SearchBar onSubmitSearch={handleSubmitSearch} />
+            <Select countries={countries} onSelectRegion={handleSelectRegion} />
+          </Flex>
+          <CardResults
+            countries={paginatedCountries}
+            searchText={textToSearch}
+            selectedRegion={selectedRegion}
+          />
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            goToPage={goToPage}
+          />
+        </>
+      )}
     </Layout>
   );
 }
