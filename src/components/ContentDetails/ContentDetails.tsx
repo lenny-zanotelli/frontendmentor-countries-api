@@ -19,10 +19,6 @@ function ContentDetails() {
     }
   }, [cca3, fetchCountry]);
 
-  if (isLoading) {
-    return <Loader />;
-  }
-
   if (error) {
     return <div>error: {error.message}</div>;
   }
@@ -36,47 +32,52 @@ function ContentDetails() {
         maxWidth: 1000,
       }}
     >
-      <Box pb="6">
-        <img
-          src={country.flags.png}
-          alt={country.flags.alt}
-          style={{
-            objectFit: 'cover',
-          }}
-        />
-      </Box>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <Box pb="6">
+            <img
+              src={country.flags.png}
+              alt={country.flags.alt}
+              style={{
+                objectFit: 'cover',
+              }}
+            />
+          </Box>
+          <Flex direction="column">
+            <Box height="max-content" mb="6">
+              <Heading as="h1" size="8">
+                {country.name.common}
+              </Heading>
+            </Box>
 
-      <Flex direction="column">
-        <Box height="max-content" mb="6">
-          <Heading as="h1" size="8">
-            {country.name.common}
-          </Heading>
-        </Box>
+            <Flex direction={{ initial: 'column', sm: 'row' }} gap="6">
+              <GeneralInfo country={country} />
 
-        <Flex direction={{ initial: 'column', sm: 'row' }} gap="6">
-          <GeneralInfo country={country} />
+              <Flex direction="column" align="start" gap="3">
+                <TopLevelDomain country={country} />
+                <Currencies country={country} />
+                <Languages country={country} />
+              </Flex>
+            </Flex>
 
-          <Flex direction="column" align="start" gap="3">
-            <TopLevelDomain country={country} />
-            <Currencies country={country} />
-            <Languages country={country} />
+            <Flex
+              direction={{ initial: 'column', md: 'row' }}
+              justify="start"
+              align={{ initial: 'start', md: 'center' }}
+              mt={{ initial: '9', sm: '1', md: '2' }}
+              gap="2"
+            >
+              <Heading as="h3" size="4">
+                Border Countries:
+              </Heading>
+
+              <BorderButton country={country} />
+            </Flex>
           </Flex>
-        </Flex>
-
-        <Flex
-          direction={{ initial: 'column', md: 'row' }}
-          justify="start"
-          align={{ initial: 'start', md: 'center' }}
-          mt={{ initial: '9', sm: '1', md: '2' }}
-          gap="2"
-        >
-          <Heading as="h3" size="4">
-            Border Countries:
-          </Heading>
-
-          <BorderButton country={country} />
-        </Flex>
-      </Flex>
+        </>
+      )}
     </Grid>
   );
 }
