@@ -10,6 +10,7 @@ import {
 } from '@radix-ui/themes';
 import { Country } from '../../@types/countries';
 import formatNumber from '../../utils/formatPopNumber';
+import FlagImage from './FlagImage';
 
 interface CountryProps {
   country: Country;
@@ -28,15 +29,7 @@ function CardComponent({ country }: CountryProps) {
         <Flex gap="5" direction="column">
           <Inset pb="current">
             <AspectRatio ratio={16 / 9}>
-              <img
-                src={country.flags.png}
-                alt={country.name.common}
-                style={{
-                  objectFit: 'cover',
-                  width: '100%',
-                  height: '100%',
-                }}
-              />
+              <FlagImage src={country.flags.png} alt={country.flags.alt} />
             </AspectRatio>
           </Inset>
           <Flex direction="column" width="100%" justify="between">
