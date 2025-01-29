@@ -1,5 +1,6 @@
 import { Flex, Heading } from '@radix-ui/themes';
 import ToggleButton from '../../ui/ToggleButton';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -13,7 +14,7 @@ function Header() {
       }}
     >
       <Heading as="h1" weight="bold" size={{ initial: '4', sm: '6' }}>
-        <a href="/">Where in the world ?</a>
+        <Link to="/">Where in the world ?</Link>
       </Heading>
       <ToggleButton />
     </Flex>
