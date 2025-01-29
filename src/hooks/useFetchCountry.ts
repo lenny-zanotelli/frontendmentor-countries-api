@@ -13,7 +13,7 @@ export const useFetchCountry = (initialCca3?: string) => {
   const [state, setState] = useState<CountryState>({
     data: null,
     error: null,
-    isLoading: Boolean(initialCca3),
+    isLoading: false,
   });
 
   const fetchCountry = useCallback(async (cca3: string) => {

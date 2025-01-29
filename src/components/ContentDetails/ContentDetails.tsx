@@ -22,7 +22,6 @@ function ContentDetails() {
   if (error) {
     return <div>error: {error.message}</div>;
   }
-  if (!country) return;
   return (
     <Grid
       columns={{ initial: '1', md: '2' }}
@@ -32,7 +31,7 @@ function ContentDetails() {
         maxWidth: 1000,
       }}
     >
-      {isLoading ? (
+      {!country || isLoading ? (
         <Loader />
       ) : (
         <>

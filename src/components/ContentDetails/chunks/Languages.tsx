@@ -5,10 +5,16 @@ function Languages({ country }: ContentDetailsProps) {
   return (
     <Text as="p" weight="bold">
       Languages:
-      <Text as="span" weight="regular">
-        &nbsp;
-        {Object.values(country.languages).join(', ')}
-      </Text>
+      {country.languages ? (
+        <Text as="span" weight="regular">
+          &nbsp;
+          {Object.values(country.languages).join(', ')}
+        </Text>
+      ) : (
+        <Text as="span" weight="regular">
+          &nbsp; N/A
+        </Text>
+      )}
     </Text>
   );
 }
