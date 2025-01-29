@@ -1,5 +1,5 @@
 import { Country } from '../../@types/countries';
 
-export interface ContentDetailProps {
+export interface ContentDetailsProps {
   country: Country;
 }

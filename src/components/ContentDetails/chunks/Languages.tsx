@@ -1,5 +1,5 @@
 import { Text } from '@radix-ui/themes';
-import { ContentDetailProps } from '../../../@types/ContentDetailProps';
+import { ContentDetailProps } from '../../../@types/ContentDetailsProps';
 
 function Languages({ country }: ContentDetailProps) {
   return (

@@ -1,6 +1,6 @@
 import { Button, Flex, Text } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
-import { ContentDetailProps } from '../../@types/ContentDetailProps';
+import { ContentDetailProps } from '../../@types/ContentDetailsProps';
 import { cca3ToNameMap } from '../../utils/cca3ToNameMap';
 
 function BorderButton({ country }: ContentDetailProps) {
