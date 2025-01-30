@@ -3,7 +3,7 @@ import { BASE_URL } from '../utils/constant';
 import { ApiError, BaseError, NetworkError, ValidationError } from './errors';
 
 export class CountryApi {
-  private static validateCCA3(cca3: string): void {
+  public static validateCCA3(cca3: string): void {
     if (!cca3?.match(/^[A-Za-z]{3}$/)) {
       throw new ValidationError('CCA3 must be a 3-letter code');
     }
