@@ -9,7 +9,7 @@ import {
   Text,
 } from '@radix-ui/themes';
 import { Country } from '../../@types/countries';
-import formatNumber from '../../utils/formatPopNumber';
+import formatNumber from '../../utils/formatNumber';
 import FlagImage from './FlagImage';
 
 interface CountryProps {

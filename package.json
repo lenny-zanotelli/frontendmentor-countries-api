@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "prettier": "prettier --write .",
     "lint": "eslint .",
-    "test": "vitest",
+    "test": "vitest --typecheck",
     "coverage": "vitest run --coverage"
   },
   "devEngines": {
@@ -45,6 +45,7 @@
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
     "globals": "^15.14.0",
+    "jsdom": "^26.0.0",
     "prettier": "3.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
