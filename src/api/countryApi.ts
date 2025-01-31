@@ -8,7 +8,7 @@ export class CountryApi {
       throw new ValidationError('CCA3 must be a 3-letter code');
     }
   }
-  private static async handleResponse<T>(response: Response): Promise<T> {
+  public static async handleResponse<T>(response: Response): Promise<T> {
     if (!response.ok) {
       const error = await response
         .json()
